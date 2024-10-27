@@ -22,7 +22,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
           margin: EdgeInsets.only(left: 20),
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/image/logo.png'),
+              image: AssetImage('image/logo.png'),
               fit: BoxFit.none,
               scale: 10.0,
               alignment: Alignment.centerLeft,
