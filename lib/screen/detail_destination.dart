@@ -51,7 +51,7 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
                           },
                           children: List.generate(
                             widget.destination.image!.length,
-                            (index) => Image.asset('image/ggede.png',fit: BoxFit.cover
+                            (index) => Image.asset(widget.destination.image![index],fit: BoxFit.cover,
                             // (index) => Image.network(
                             //   fit: BoxFit.cover,
                             //   widget.destination.image![index],

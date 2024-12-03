@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/models/destinasi_wisata.dart';
 import 'package:myapp/screen/detail_destination.dart';
+import 'package:myapp/widget/populer.dart';
 
 class BelajarNavBar extends StatefulWidget {
   @override
@@ -74,9 +75,73 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
           ),
         ],
       ),
-      backgroundColor: Colors.grey,
+      backgroundColor: Color.fromARGB(255, 1, 44, 32),
       body: Column(
         children: [
+          Container(
+            height: 110,
+            color: Color.fromARGB(255, 0, 57, 41),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 10,
+                ),
+                Text("Wellcome Kabupaten Cianjur",style: TextStyle(color: Colors.white,fontSize: 24),),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: Text("Cari dan tentukan wisata pilihan di tiap-tiap kecamatan yang ada di kabupaten Cianjur",style: TextStyle(color: Colors.white,fontSize: 14,),
+                ),),
+              ],
+            )
+          ),
+          Container(
+            height: 70,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    child: Container(
+                      padding: EdgeInsets.all(2),
+                      color: Color.fromARGB(255, 30, 30, 30),
+                      child: IconButton(onPressed: (){}, icon: Image(image: AssetImage('image/Vector.png',),fit: BoxFit.cover,)),
+                    ),
+                  ),
+                ),
+                Container(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    child: Container(
+                      padding: EdgeInsets.all(2),
+                      color: Color.fromARGB(255, 30, 30, 30),
+                      child: IconButton(onPressed: (){}, icon: Image(image: AssetImage('image/Vector1.png',),fit: BoxFit.cover,)),
+                    ),
+                  ),
+                ),
+                Container(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    child: Container(
+                      padding: EdgeInsets.all(2),
+                      color: Color.fromARGB(255, 30, 30, 30),
+                      child: IconButton(onPressed: (){}, icon: Image(image: AssetImage('image/Vector2.png',),fit: BoxFit.cover,)),
+                    ),
+                  ),
+                ),
+                Container(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    child: Container(
+                      padding: EdgeInsets.all(2),
+                      color: Color.fromARGB(255, 30, 30, 30),
+                      child: IconButton(onPressed: (){}, icon: Image(image: AssetImage('image/Vector3.png',),fit: BoxFit.cover,)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
           SizedBox(
             height: 20,
           ),
@@ -86,7 +151,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Destinasi Populer',
+                  'Wisata Populer Cipanas',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -121,7 +186,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                         ),
                       );
                     },
-                    // child: PopularDestination(destination: popular[index]),
+                    child: PopularDestination(destination: popular[index]),
                   ),
                 ),
               ),
@@ -136,7 +201,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Rekomendasi Untuk Kamu',
+                  'Hotel Populer Cipanas',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -150,80 +215,36 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
               ],
             ),
           ),
-        
-          Expanded(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: Column(
-                children: List.generate(
-                  rekomendasi.length,
-                  (index) => Padding(
-                    padding: EdgeInsets.only(bottom: 10),
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => DetailDestinasi(
-                                destination: rekomendasi[index]),
-                          ),
-                        );
-                      },
-                      // child: RekomendasiDestination(
-                      //     destination: rekomendasi[index]),
-                    ),
+          SizedBox(
+            height: 20,
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.only(left: 15),
+            child: Row(
+              children: List.generate(
+                popular.length,
+                (index) => Padding(
+                  padding: EdgeInsets.only(right: 10),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) =>
+                              DetailDestinasi(destination: popular[index]),
+                        ),
+                      );
+                    },
+                    child: hotelDestination(destination: popular[index]),
                   ),
                 ),
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Column(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 15, vertical: 18),
-                        decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: List.generate(
-                            icons.length,
-                            (index) => GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  _selectedNavbar = index;
-                                });
-                              },
-                              child: Icon(
-                                icons[index],
-                                size: 32,
-                                color: _selectedNavbar == index
-                                    ? Colors.white
-                                    : Colors.white.withOpacity(0.4),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      // const SizedBox(
-                      //   height: 25,
-                      // ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
+          
+        
+
         ],
       ),
       bottomNavigationBar: Container(

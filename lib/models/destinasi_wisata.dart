@@ -7,6 +7,7 @@ const description =
 class TravelDestination {
   final int id, price, review;
   final List<String>? image;
+  final List<String>? himage;
   final String name, description, category, location;
   final double rate;
 
@@ -15,6 +16,7 @@ class TravelDestination {
     required this.name,
     required this.category,
     required this.image,
+    required this.himage,
     required this.location,
     required this.review,
     required this.price,
@@ -32,6 +34,9 @@ List<TravelDestination> listDestination = [
       image: [
         'image/ggede.png','image/ggede.png','image/ggede.png','image/ggede.png',
       ],
+      himage: [
+        'image/hggede.png','image/hggede.png','image/hggede.png','image/hggede.png',
+      ],
       location: 'Jawa Timur, Indonesia',
       review: random.nextInt(250) + 20,
       price: 150,
@@ -43,6 +48,9 @@ List<TravelDestination> listDestination = [
       category: 'popular',
       image: [
         'image/ggede.png','image/ggede.png','image/ggede.png','image/ggede.png',
+      ],
+      himage: [
+        'image/hggede.png','image/hggede.png','image/hggede.png','image/hggede.png',
       ],
       location: 'NTT, Indonesia',
       review: random.nextInt(250) + 20,
@@ -56,6 +64,9 @@ List<TravelDestination> listDestination = [
       image: [
         'image/ggede.png','image/ggede.png','image/ggede.png','image/ggede.png',
       ],
+      himage: [
+        'image/hggede.png','image/hggede.png','image/hggede.png','image/hggede.png',
+      ],
       location: 'Papua Barat, Indonesia',
       review: random.nextInt(250) + 20,
       price: 250,
@@ -67,6 +78,9 @@ List<TravelDestination> listDestination = [
       category: 'popular',
       image: [
         'image/ggede.png','image/ggede.png','image/ggede.png','image/ggede.png',
+      ],
+      himage: [
+        'image/hggede.png','image/hggede.png','image/hggede.png','image/hggede.png',
       ],
       location: 'Bali, Indonesia',
       review: random.nextInt(250) + 20,
@@ -82,6 +96,9 @@ List<TravelDestination> listDestination = [
       image: [
         'image/ggede.png','image/ggede.png','image/ggede.png','image/ggede.png',
       ],
+      himage: [
+        'image/hggede.png','image/hggede.png','image/hggede.png','image/hggede.png',
+      ],
       location: 'Jawa Timur, Indonesia',
       review: random.nextInt(250) + 20,
       price: 180,
@@ -93,6 +110,9 @@ List<TravelDestination> listDestination = [
       category: 'rekomendasi',
       image: [
         'image/ggede.png','image/ggede.png','image/ggede.png','image/ggede.png',
+      ],
+      himage: [
+        'image/hggede.png','image/hggede.png','image/hggede.png','image/hggede.png',
       ],
       location: 'Sumatera Utara, Indonesia',
       review: random.nextInt(250) + 20,
@@ -106,6 +126,9 @@ List<TravelDestination> listDestination = [
       image: [
         'image/ggede.png','image/ggede.png','image/ggede.png','image/ggede.png',
       ],
+      himage: [
+        'image/hggede.png','image/hggede.png','image/hggede.png','image/hggede.png',
+      ],
       location: 'NTT, Indonesia',
       review: random.nextInt(250) + 20,
       price: 350,
@@ -118,6 +141,9 @@ List<TravelDestination> listDestination = [
       image: [
         'image/ggede.png','image/ggede.png','image/ggede.png','image/ggede.png',
       ],
+      himage: [
+        'image/hggede.png','image/hggede.png','image/hggede.png','image/hggede.png',
+      ],
       location: 'Bali, Indonesia',
       review: random.nextInt(250) + 20,
       price: 200,
@@ -129,6 +155,9 @@ List<TravelDestination> listDestination = [
       category: 'rekomendasi',
       image: [
         'image/ggede.png','image/ggede.png','image/ggede.png','image/ggede.png',
+      ],
+      himage: [
+        'image/hggede.png','image/hggede.png','image/hggede.png','image/hggede.png',
       ],
       location: 'Jawa Tengah, Indonesia',
       review: random.nextInt(250) + 20,
