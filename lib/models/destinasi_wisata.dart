@@ -1,26 +1,23 @@
 import 'dart:math';
 
 Random random = Random();
-const description =
-    'Tempat-tempat wisata menawarkan beragam pengalaman, masing-masing dengan pesona dan daya tarik yang unik. Dari lanskap alam yang memukau hingga landmark bersejarah, selalu ada sesuatu untuk setiap wisatawan. Wisata PesisirDestinasi seperti pantai tropis mengundang relaksasi dengan air yang jernih, sementara daerah pegunungan menawarkan jalur pendakian yang penuh petualangan dan pemandangan yang menakjubkan.';
 
 class TravelDestination {
+  final String des;
   final int id, price, review;
   final List<String>? image;
-  final List<String>? himage;
-  final String name, description, category, location;
+  final String name,  category, location;
   final double rate;
 
-  TravelDestination({
+  TravelDestination( {
+    required this.des,
     required this.id,
     required this.name,
     required this.category,
     required this.image,
-    required this.himage,
     required this.location,
     required this.review,
     required this.price,
-    required this.description,
     required this.rate,
   });
 }
@@ -29,193 +26,44 @@ List<TravelDestination> listDestination = [
   // Popular destinations
   TravelDestination(
       id: 1,
-      name: "Gunung Bromo",
+      name: "Gunung Gede",
       category: 'popular',
       image: [
         'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
+        'image/gede-2.jpg',
+        'image/gede-3.jpg',
       ],
-      himage: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-      ],
-      location: 'Jawa Timur, Indonesia',
+      location: 'Kecamatan Cipanas, Kabupaten Cianjur',
       review: random.nextInt(250) + 20,
       price: 150,
-      description: description,
+      des : 'Taman Nasional Gunung Gede Pangrango adalah salah satu taman nasional yang terletak di Provinsi Jawa Barat. Ditetapkan pada tahun 1980, taman nasional ini merupakan salah satu yang tertua di Indonesia.',
       rate: 4.8),
   TravelDestination(
       id: 2,
-      name: "Pulau Komodo",
+      name: "cibodas",
       category: 'popular',
       image: [
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
+        'image/cibodas-1.jpg',
+        'image/cibodas-2.jpg',
+        'image/cibodas-3.jpg',
       ],
-      himage: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-      ],
-      location: 'NTT, Indonesia',
+      location: 'Kecamatan Cipanas, Kabupaten Cianjur',
       review: random.nextInt(250) + 20,
       price: 250,
-      description: description,
+      des : 'Kebun Raya Cibodas merupakan tempat Taman hijau yang indah dengan koleksi ratusan pepohonan, termasuk pohon kina yang pertama kali didatangkan pada tahun 1852. Kebun Raya Cibodas juga memiliki Taman Lumut terbesar di Indonesia dan terbesar di dunia yang berada di luar ruangan. ',
       rate: 4.9),
   TravelDestination(
       id: 3,
-      name: "Raja Ampat",
+      name: "Sevillage Cipanas",
       category: 'popular',
       image: [
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
+        'image/sevillage-1.jpg',
+        'image/sevillage-2.jpg',
+        'image/sevillage-3.jpg',
       ],
-      himage: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-      ],
-      location: 'Papua Barat, Indonesia',
+      location: 'Kecamatan Cipanas, Kabupaten Cianjur',
       review: random.nextInt(250) + 20,
       price: 250,
-      description: description,
-      rate: 4.8),
-  TravelDestination(
-      id: 4,
-      name: "Tanah Lot",
-      category: 'popular',
-      image: [
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
-      ],
-      himage: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-      ],
-      location: 'Bali, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 100,
-      description: description,
+      des : 'Sevillage merupakan Taman di lereng bukit dengan jalan kayu, yang menawarkan bangunan untuk berfoto, restoran, dan tenda glamping.',
       rate: 4.7),
-
-  // Recommended destinations
-  TravelDestination(
-      id: 5,
-      name: "Kawah Ijen",
-      category: 'rekomendasi',
-      image: [
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
-      ],
-      himage: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-      ],
-      location: 'Jawa Timur, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 180,
-      description: description,
-      rate: 4.6),
-  TravelDestination(
-      id: 6,
-      name: "Danau Toba",
-      category: 'rekomendasi',
-      image: [
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
-      ],
-      himage: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-      ],
-      location: 'Sumatera Utara, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 120,
-      description: description,
-      rate: 4.5),
-  TravelDestination(
-      id: 7,
-      name: "Pink Beach",
-      category: 'rekomendasi',
-      image: [
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
-      ],
-      himage: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-      ],
-      location: 'NTT, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 350,
-      description: description,
-      rate: 4.7),
-  TravelDestination(
-      id: 8,
-      name: "Nusa Penida",
-      category: 'rekomendasi',
-      image: [
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
-      ],
-      himage: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-      ],
-      location: 'Bali, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 200,
-      description: description,
-      rate: 4.7),
-  TravelDestination(
-      id: 9,
-      name: "Candi Borobudur",
-      category: 'rekomendasi',
-      image: [
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
-        'image/ggede.png',
-      ],
-      himage: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-      ],
-      location: 'Jawa Tengah, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 150,
-      description: description,
-      rate: 4.8),
 ];

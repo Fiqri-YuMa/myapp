@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/models/destinasi_wisata.dart';
 import 'package:myapp/models/hotel_wisata.dart';
+import 'package:myapp/models/kuliner_wisata.dart';
 import 'package:myapp/screen/detail_destination.dart';
 import 'package:myapp/widget/wisata.dart';
 
@@ -14,7 +15,7 @@ class HalamanWisata extends StatefulWidget {
 class _HalamanState extends State<HalamanWisata> {
   List<TravelDestination> wisata = listDestination;
   List<hotelDestination> hotel = listHotelDestination;
-  // List<restoDestination> popular = listRestoDestination;
+  List<KulinerDestination> popular = listKulinerDestination;
 
   PageController pageController = PageController();
   int pageView = 0;

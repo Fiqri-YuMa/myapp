@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/models/destinasi_wisata.dart';
 import 'package:myapp/models/hotel_wisata.dart';
+import 'package:myapp/models/kuliner_wisata.dart';
 import 'package:myapp/screen/detail_destination.dart';
 import 'package:myapp/widget/hotel.dart';
+import 'package:myapp/widget/kuliner.dart';
 import 'package:myapp/widget/wisata.dart';
 
 class BelajarNavBar extends StatefulWidget {
@@ -26,6 +28,14 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
       .toList();
 
   List<hotelDestination> popularhotel = listHotelDestination
+      .where((element) => element.category == 'popular')
+      .toList();
+
+List<KulinerDestination> rekomendasikuliner = listKulinerDestination
+      .where((element) => element.category == 'rekomendasi')
+      .toList();
+
+  List<KulinerDestination> popularkuliner = listKulinerDestination
       .where((element) => element.category == 'popular')
       .toList();
 
@@ -99,14 +109,16 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text(
+                    Container(
+                      padding: EdgeInsets.only(right:110),
+                      child:  Text(
                       "Wellcome Kabupaten Cianjur",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
                           fontFamily: 'Roboto',
                           fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.left,
+                    ),
                     ),
                     Container(
                       padding: EdgeInsets.all(10),
@@ -275,15 +287,16 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                         color: Colors.white,
                       ),
                     ),
+                    
                     Text(
                       'Lihat Semua >',
-                      style: TextStyle(
+                       style: TextStyle(
                         fontSize: 12,
                         fontFamily: 'League Spartan',
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -375,6 +388,64 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                 ),
               ),
             ),
+            Container(
+              color: Color.fromARGB(255, 0, 28, 20),
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Kuliner Populer Cipanas',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontFamily: 'League Spartan',
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      'Lihat Semua >',
+                       style: TextStyle(
+                        fontSize: 12,
+                        fontFamily: 'League Spartan',
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              height: 349,
+              color: Color.fromARGB(255, 3, 22, 17),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.only(left: 15),
+                child: Row(
+                  children: List.generate(
+                    popular.length,
+                    (index) => Padding(
+                      padding: EdgeInsets.only(right: 10),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) =>
+                                  DetailDestinasi(destination: popular[index]),
+                            ),
+                          );
+                        },
+                        child: PopularKulinerDestination(destination: popularkuliner[index]),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
             // SingleChildScrollView(
             //   scrollDirection: Axis.horizontal,
             //   padding: EdgeInsets.only(left: 15),
@@ -425,7 +496,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
               ],
               currentIndex: _selectedNavbar,
               backgroundColor: Color.fromARGB(255, 0, 28, 20),
-              selectedItemColor: Colors.grey,
+              selectedItemColor: Colors.teal[200],
               unselectedItemColor: Colors.white,
               showUnselectedLabels: true,
               onTap: _changeSelectedNavBar,
