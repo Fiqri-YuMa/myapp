@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/models/destinasi_wisata.dart';
+import 'package:myapp/models/hotel_wisata.dart';
 import 'package:myapp/screen/detail_destination.dart';
-import 'package:myapp/widget/populer.dart';
+import 'package:myapp/widget/hotel.dart';
+import 'package:myapp/widget/wisata.dart';
 
 class BelajarNavBar extends StatefulWidget {
   @override
@@ -19,7 +21,15 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
       .where((element) => element.category == 'rekomendasi')
       .toList();
 
-    List<IconData> icons = [
+  List<hotelDestination> rekomendasihotel = listHotelDestination
+      .where((element) => element.category == 'rekomendasi')
+      .toList();
+
+  List<hotelDestination> popularhotel = listHotelDestination
+      .where((element) => element.category == 'popular')
+      .toList();
+
+  List<IconData> icons = [
     Icons.home_filled,
     Icons.bookmark_border_rounded,
     Icons.shopping_cart_outlined,
@@ -37,6 +47,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Container(
+          height: 100,
           margin: EdgeInsets.only(left: 20),
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -76,206 +87,351 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
         ],
       ),
       backgroundColor: Color.fromARGB(255, 1, 44, 32),
-      body: Column(
-        children: [
-          Container(
-            height: 110,
-            color: Color.fromARGB(255, 0, 57, 41),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 10,
-                ),
-                Text("Wellcome Kabupaten Cianjur",style: TextStyle(color: Colors.white,fontSize: 24),),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: Text("Cari dan tentukan wisata pilihan di tiap-tiap kecamatan yang ada di kabupaten Cianjur",style: TextStyle(color: Colors.white,fontSize: 14,),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+                height: 110,
+                padding: EdgeInsets.only(right: 10, left: 10),
+                color: Color.fromARGB(255, 0, 57, 41),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Wellcome Kabupaten Cianjur",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.left,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        "Cari dan tentukan wisata pilihan di tiap-tiap kecamatan yang ada di kabupaten Cianjur",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Roboto',
+                          fontSize: 13,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),),
-              ],
-            )
-          ),
-          Container(
-            height: 70,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                    child: Container(
-                      padding: EdgeInsets.all(2),
-                      color: Color.fromARGB(255, 30, 30, 30),
-                      child: IconButton(onPressed: (){}, icon: Image(image: AssetImage('image/Vector.png',),fit: BoxFit.cover,)),
-                    ),
-                  ),
-                ),
-                Container(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                    child: Container(
-                      padding: EdgeInsets.all(2),
-                      color: Color.fromARGB(255, 30, 30, 30),
-                      child: IconButton(onPressed: (){}, icon: Image(image: AssetImage('image/Vector1.png',),fit: BoxFit.cover,)),
-                    ),
-                  ),
-                ),
-                Container(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                    child: Container(
-                      padding: EdgeInsets.all(2),
-                      color: Color.fromARGB(255, 30, 30, 30),
-                      child: IconButton(onPressed: (){}, icon: Image(image: AssetImage('image/Vector2.png',),fit: BoxFit.cover,)),
-                    ),
-                  ),
-                ),
-                Container(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                    child: Container(
-                      padding: EdgeInsets.all(2),
-                      color: Color.fromARGB(255, 30, 30, 30),
-                      child: IconButton(onPressed: (){}, icon: Image(image: AssetImage('image/Vector3.png',),fit: BoxFit.cover,)),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Wisata Populer Cipanas',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black,
-                  ),
-                ),
-                Text(
-                  'Lihat Semua',
-                  style: TextStyle(fontSize: 12, color: Colors.blue),
-                )
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(left: 15),
-            child: Row(
-              children: List.generate(
-                popular.length,
-                (index) => Padding(
-                  padding: EdgeInsets.only(right: 10),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) =>
-                              DetailDestinasi(destination: popular[index]),
+            Container(
+              height: 120,
+              padding: EdgeInsets.only(top: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        width: 70,
+                        height: 70,
+                        margin: EdgeInsets.only(bottom: 5),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          child: Container(
+                            padding: EdgeInsets.all(2),
+                            color: Color.fromARGB(255, 30, 30, 30),
+                            child: IconButton(
+                                onPressed: () {},
+                                icon: Image(
+                                  image: AssetImage(
+                                    'image/Vector.png',
+                                  ),
+                                  fit: BoxFit.cover,
+                                )),
+                          ),
                         ),
-                      );
-                    },
-                    child: PopularDestination(destination: popular[index]),
+                      ),
+                      Text(
+                        'Wisata',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Roboto',
+                            fontSize: 12),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        width: 70,
+                        height: 70,
+                        margin: EdgeInsets.only(bottom: 5),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          child: Container(
+                            padding: EdgeInsets.all(2),
+                            color: Color.fromARGB(255, 30, 30, 30),
+                            child: IconButton(
+                                onPressed: () {},
+                                icon: Image(
+                                  image: AssetImage(
+                                    'image/Vector1.png',
+                                  ),
+                                  fit: BoxFit.cover,
+                                )),
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Penginapan',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Roboto',
+                            fontSize: 12),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        width: 70,
+                        height: 70,
+                        margin: EdgeInsets.only(bottom: 5),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          child: Container(
+                            padding: EdgeInsets.all(2),
+                            color: Color.fromARGB(255, 30, 30, 30),
+                            child: IconButton(
+                                onPressed: () {},
+                                icon: Image(
+                                  image: AssetImage(
+                                    'image/Vector2.png',
+                                  ),
+                                  fit: BoxFit.cover,
+                                )),
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Kuliner',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Roboto',
+                            fontSize: 12),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        width: 70,
+                        height: 70,
+                        margin: EdgeInsets.only(bottom: 5),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          child: Container(
+                            padding: EdgeInsets.all(2),
+                            color: Color.fromARGB(255, 30, 30, 30),
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: Image(
+                                image: AssetImage(
+                                  'image/Vector3.png',
+                                ),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Event',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Roboto',
+                            fontSize: 12),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              color: Color.fromARGB(255, 0, 28, 20),
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Wisata Populer Cipanas',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontFamily: 'League Spartan',
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      'Lihat Semua >',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontFamily: 'League Spartan',
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              height: 349,
+              color: Color.fromARGB(255, 3, 22, 17),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.only(left: 15),
+                child: Row(
+                  children: List.generate(
+                    popular.length,
+                    (index) => Padding(
+                      padding: EdgeInsets.only(right: 10),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) =>
+                                  DetailDestinasi(destination: popular[index]),
+                            ),
+                          );
+                        },
+                        child: PopularDestination(destination: popular[index]),
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Hotel Populer Cipanas',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black,
-                  ),
+            Container(
+              color: Color.fromARGB(255, 0, 28, 20),
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Hotel Populer Cipanas',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontFamily: 'League Spartan',
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      'Lihat Semua >',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontFamily: 'League Spartan',
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
                 ),
-                Text(
-                  'Lihat Semua',
-                  style: TextStyle(fontSize: 12, color: Colors.blue),
-                )
-              ],
+              ),
             ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(left: 15),
-            child: Row(
-              children: List.generate(
-                popular.length,
-                (index) => Padding(
-                  padding: EdgeInsets.only(right: 10),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) =>
-                              DetailDestinasi(destination: popular[index]),
-                        ),
-                      );
-                    },
-                    child: hotelDestination(destination: popular[index]),
+            Container(
+              height: 349,
+              color: Color.fromARGB(255, 3, 22, 17),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.only(left: 15),
+                child: Row(
+                  children: List.generate(
+                    popular.length,
+                    (index) => Padding(
+                      padding: EdgeInsets.only(right: 10),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) =>
+                                  DetailDestinasi(destination: popular[index]),
+                            ),
+                          );
+                        },
+                        child: PopularHotelDestination(
+                            destination: popularhotel[index]),
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          
-        
-
-        ],
+            // SingleChildScrollView(
+            //   scrollDirection: Axis.horizontal,
+            //   padding: EdgeInsets.only(left: 15),
+            //   child: Row(
+            //     children: List.generate(
+            //       popular.length,
+            //       (index) => Padding(
+            //         padding: EdgeInsets.only(right: 10),
+            //         child: GestureDetector(
+            //           onTap: () {
+            //             Navigator.push(
+            //               context,
+            //               MaterialPageRoute(
+            //                 builder: (_) =>
+            //                     DetailDestinasi(destination: popular[index]),
+            //               ),
+            //             );
+            //           },
+            //           child: TravelDestination(destination: popular[index]),
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
+          ],
+        ),
       ),
       bottomNavigationBar: Container(
         color: Color.fromARGB(255, 0, 57, 41),
         padding: EdgeInsets.only(bottom: 20, left: 10, right: 10, top: 15),
         child: ClipRRect(
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-            child: Container(
-              child: BottomNavigationBar(
-                items: const <BottomNavigationBarItem>[
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.home),
-                    label: 'Home',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.bookmark),
-                    label: 'Favorit',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.person),
-                    label: 'Akun',
-                  ),
-                ],
-                currentIndex: _selectedNavbar,
-                backgroundColor: Color.fromARGB(255, 0, 28, 20),
-                selectedItemColor: Colors.grey,
-                unselectedItemColor: Colors.white,
-                showUnselectedLabels: true,
-                onTap: _changeSelectedNavBar,
-              ),
-            )),
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          child: Container(
+            child: BottomNavigationBar(
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.bookmark),
+                  label: 'Favorit',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person),
+                  label: 'Akun',
+                ),
+              ],
+              currentIndex: _selectedNavbar,
+              backgroundColor: Color.fromARGB(255, 0, 28, 20),
+              selectedItemColor: Colors.grey,
+              unselectedItemColor: Colors.white,
+              showUnselectedLabels: true,
+              onTap: _changeSelectedNavBar,
+            ),
+          ),
+        ),
       ),
     );
   }

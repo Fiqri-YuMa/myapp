@@ -29,14 +29,14 @@ class PopularDestination extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(15),
           child: Container(
-            height: 165,
-            width: MediaQuery.of(context).size.width * 0.65,
+            height: 300,
+            width: 200,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(
                 fit: BoxFit.cover,
-              image: AssetImage(
-                destination.image![0],
+                image: AssetImage(
+                  destination.image![0],
                 ),
               ),
             ),
@@ -57,52 +57,19 @@ class PopularDestination extends StatelessWidget {
                             Text(
                               destination.name,
                               style: const TextStyle(
-                                fontSize: 16,
+                                fontSize: 15,
                                 color: Colors.white,
-                                fontWeight: FontWeight.w500,
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.bold,
                               ),
-                            ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                const Icon(
-                                  Icons.location_on_outlined,
-                                  color: Colors.white,
-                                  size: 16,
-                                ),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                                Text(
-                                  destination.location,
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.star,
-                              size: 22,
-                              color: Colors.yellow[800],
-                            ),
-                            const SizedBox(
-                              width: 5,
                             ),
                             Text(
-                              destination.rate.toString(),
+                              destination.location,
                               style: const TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            )
+                                  color: Colors.white,
+                                  fontSize: 8,
+                                  fontFamily: 'Roboto'),
+                            ),
                           ],
                         ),
                       ],
@@ -118,9 +85,9 @@ class PopularDestination extends StatelessWidget {
   }
 }
 
-class hotelDestination extends StatelessWidget {
+class halamanDestination extends StatelessWidget {
   final TravelDestination destination;
-  const hotelDestination({super.key, required this.destination});
+  const halamanDestination({super.key, required this.destination});
 
   @override
   Widget build(BuildContext context) {
@@ -144,16 +111,16 @@ class hotelDestination extends StatelessWidget {
           ),
         ),
         ClipRRect(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(10),
           child: Container(
-            height: 165,
-            width: MediaQuery.of(context).size.width * 0.65,
+            height: 235,
+            width: 355,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(10),
               image: DecorationImage(
                 fit: BoxFit.cover,
-              image: AssetImage(
-                destination.himage![0],
+                image: AssetImage(
+                  destination.image![0],
                 ),
               ),
             ),
@@ -174,52 +141,19 @@ class hotelDestination extends StatelessWidget {
                             Text(
                               destination.name,
                               style: const TextStyle(
-                                fontSize: 16,
+                                fontSize: 15,
                                 color: Colors.white,
-                                fontWeight: FontWeight.w500,
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.bold,
                               ),
-                            ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                const Icon(
-                                  Icons.location_on_outlined,
-                                  color: Colors.white,
-                                  size: 16,
-                                ),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                                Text(
-                                  destination.location,
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.star,
-                              size: 22,
-                              color: Colors.yellow[800],
-                            ),
-                            const SizedBox(
-                              width: 5,
                             ),
                             Text(
-                              destination.rate.toString(),
+                              destination.location,
                               style: const TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            )
+                                  color: Colors.white,
+                                  fontSize: 8,
+                                  fontFamily: 'Roboto'),
+                            ),
                           ],
                         ),
                       ],

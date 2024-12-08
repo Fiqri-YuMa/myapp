@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/models/destinasi_wisata.dart';
 
-
 class DetailDestinasi extends StatefulWidget {
   final TravelDestination destination;
   const DetailDestinasi({super.key, required this.destination});
@@ -16,218 +15,230 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
+        centerTitle: true,
+        backgroundColor: Color.fromARGB(255, 0, 28, 20),
+        actions: [
+          Container(
+            padding: EdgeInsets.only(top: 12, bottom: 12),
+            child: ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(30)),
+              child: Container(
+                padding: EdgeInsets.only(right: 80, bottom: 25),
+                color: Color.fromARGB(255, 0, 16, 12),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.location_on),
+                  alignment: Alignment.centerLeft,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
       body: Column(
         children: [
-          buildAppBar(),
-          Padding(
-            padding: const EdgeInsets.all(15),
-            child: Column(
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.54,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Colors.white,
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.black38,
-                        offset: Offset(0, 5),
-                        blurRadius: 7,
-                        spreadRadius: 1,
-                      ),
-                    ],
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: Stack(
-                      children: [
-                        PageView(
-                          controller: pageController,
-                          onPageChanged: (value) {
-                            setState(() {
-                              pageView = value;
-                            });
-                          },
-                          children: List.generate(
-                            widget.destination.image!.length,
-                            (index) => Image.asset(widget.destination.image![index],fit: BoxFit.cover,
+          Column(
+            children: [
+              Container(
+                height: MediaQuery.of(context).size.height * 0.54,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(0),
+                  child: Stack(
+                    children: [
+                      PageView(
+                        controller: pageController,
+                        onPageChanged: (value) {
+                          setState(() {
+                            pageView = value;
+                          });
+                        },
+                        children: List.generate(
+                          widget.destination.image!.length,
+                          (index) => Image.asset(
+                            widget.destination.image![index],
+                            fit: BoxFit.cover,
                             // (index) => Image.network(
                             //   fit: BoxFit.cover,
                             //   widget.destination.image![index],
-                            ),
                           ),
                         ),
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            const Spacer(),
-                            GestureDetector(
-                              child: Container(
-                                height: 75,
-                                width: 75,
-                                margin: const EdgeInsets.only(
-                                    right: 10, bottom: 10),
-                                decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 2, color: Colors.white),
-                                  borderRadius: BorderRadius.circular(15),
-                                  image: DecorationImage(
-                                    image:
-                                        widget.destination.image!.length - 1 !=
-                                                pageView
-                                            ? NetworkImage(
-                                                widget.destination
-                                                    .image![pageView + 1],
-                                              )
-                                            : NetworkImage(
-                                                widget.destination.image![0],
-                                              ),
-                                    fit: BoxFit.cover,
-                                  ),
+                      ),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          const Spacer(),
+                          GestureDetector(
+                            child: Container(
+                              height: 75,
+                              width: 75,
+                              margin:
+                                  const EdgeInsets.only(right: 10, bottom: 10),
+                              decoration: BoxDecoration(
+                                border:
+                                    Border.all(width: 2, color: Colors.white),
+                                borderRadius: BorderRadius.circular(50),
+                                image: DecorationImage(
+                                  image: widget.destination.image!.length - 1 !=
+                                          pageView
+                                      ? AssetImage(
+                                          widget
+                                              .destination.image![pageView + 1],
+                                        )
+                                      : AssetImage(
+                                          widget.destination.image![0],
+          
+                                        ),
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                             ),
-                            Container(
-                              color: Colors.black.withOpacity(0.7),
-                              child: Padding(
-                                padding: const EdgeInsets.all(10),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: List.generate(
-                                        widget.destination.image!.length,
-                                        (index) => GestureDetector(
-                                          onTap: () {
-                                            if (pageController.hasClients) {
-                                              pageController.animateToPage(
-                                                  index,
-                                                  duration: const Duration(
-                                                      milliseconds: 500),
-                                                  curve: Curves.easeInOut);
-                                            }
-                                          },
-                                          child: AnimatedContainer(
-                                            duration: const Duration(
-                                                milliseconds: 500),
-                                            height: 4,
-                                            width: 17,
-                                            margin:
-                                                const EdgeInsets.only(right: 5),
-                                            decoration: BoxDecoration(
-                                              color: pageView == index
-                                                  ? Colors.white
-                                                  : Colors.white
-                                                      .withOpacity(0.4),
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                            ),
+                          ),
+                          Container(
+                            color: Colors.black.withOpacity(0.7),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: List.generate(
+                                      widget.destination.image!.length,
+                                      (index) => GestureDetector(
+                                        onTap: () {
+                                          if (pageController.hasClients) {
+                                            pageController.animateToPage(index,
+                                                duration: const Duration(
+                                                    milliseconds: 500),
+                                                curve: Curves.easeInOut);
+                                          }
+                                        },
+                                        child: AnimatedContainer(
+                                          duration:
+                                              const Duration(milliseconds: 500),
+                                          height: 4,
+                                          width: 17,
+                                          margin:
+                                              const EdgeInsets.only(right: 5),
+                                          decoration: BoxDecoration(
+                                            color: pageView == index
+                                                ? Colors.white
+                                                : Colors.white.withOpacity(0.4),
+                                            borderRadius:
+                                                BorderRadius.circular(10),
                                           ),
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(
-                                      height: 15,
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              widget.destination.name,
-                                              style: const TextStyle(
-                                                fontSize: 18,
+                                  ),
+                                  const SizedBox(
+                                    height: 15,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            widget.destination.name,
+                                            style: const TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 5,
+                                          ),
+                                          Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
+                                            children: [
+                                              const Icon(
+                                                Icons.location_on_outlined,
                                                 color: Colors.white,
-                                                fontWeight: FontWeight.bold,
+                                                size: 18,
                                               ),
-                                            ),
-                                            const SizedBox(
-                                              height: 5,
-                                            ),
-                                            Row(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.end,
-                                              children: [
-                                                const Icon(
-                                                  Icons.location_on_outlined,
+                                              const SizedBox(
+                                                width: 5,
+                                              ),
+                                              Text(
+                                                widget.destination.location,
+                                                style: const TextStyle(
+                                                  fontSize: 13,
                                                   color: Colors.white,
-                                                  size: 18,
+                                                  fontWeight: FontWeight.w500,
                                                 ),
-                                                const SizedBox(
-                                                  width: 5,
-                                                ),
-                                                Text(
-                                                  widget.destination.location,
-                                                  style: const TextStyle(
-                                                    fontSize: 13,
-                                                    color: Colors.white,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.end,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Icon(
-                                                  Icons.star,
-                                                  color: Colors.amber[800],
-                                                  size: 23,
-                                                ),
-                                                const SizedBox(
-                                                  width: 5,
-                                                ),
-                                                Text(
-                                                  widget.destination.rate
-                                                      .toString(),
-                                                  style: const TextStyle(
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.white,
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                            const SizedBox(
-                                              height: 5,
-                                            ),
-                                            Text(
-                                              '(${widget.destination.review} reviews)',
-                                              style: const TextStyle(
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.end,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Icon(
+                                                Icons.star,
+                                                color: Colors.amber[800],
+                                                size: 23,
+                                              ),
+                                              const SizedBox(
+                                                width: 5,
+                                              ),
+                                              Text(
+                                                widget.destination.rate
+                                                    .toString(),
+                                                style: const TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold,
                                                   color: Colors.white,
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.w500),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                          const SizedBox(
+                                            height: 5,
+                                          ),
+                                          Text(
+                                            '(${widget.destination.review} reviews)',
+                                            style: const TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
                               ),
                             ),
-                          ],
-                        ),
-                      ],
-                    ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           Expanded(
             child: DefaultTabController(
