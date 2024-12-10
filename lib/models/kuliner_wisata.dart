@@ -27,7 +27,7 @@ List<KulinerDestination> listKulinerDestination = [
   KulinerDestination(
       id: 1,
       name: "Warung Nasi Alam Sunda",
-      category: 'popular',
+      category: 'Cipanas',
       image: [
         'image/alam-sunda-1.jpg',
         'image/alam-sunda-2.jpg',
@@ -41,7 +41,7 @@ List<KulinerDestination> listKulinerDestination = [
   KulinerDestination(
       id: 2,
       name: "Rumah Makan Bumi Aki",
-      category: 'popular',
+      category: 'Cipanas',
       image: [
         'image/bumi-aki-1.jpg',
         'image/bumi-aki-2.jpg',
@@ -55,7 +55,7 @@ List<KulinerDestination> listKulinerDestination = [
   KulinerDestination(
       id: 3,
       name: "Sate Maranggi Sari Asih",
-      category: 'popular',
+      category: 'Cipanas',
       image: [
         'image/sate-1.jpg',
         'image/sate-2.jpg',

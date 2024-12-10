@@ -28,7 +28,7 @@ List<hotelDestination> listHotelDestination = [
   hotelDestination(
       id: 1,
       name: "Palace-hotel",
-      category: 'popular',
+      category: 'Cipanas',
       image: [
         'image/palace-hotel-1.jpg',
         'image/palace-hotel-2.jpg',
@@ -43,7 +43,7 @@ List<hotelDestination> listHotelDestination = [
   hotelDestination(
       id: 2,
       name: "Puncak in Resort Hotel",
-      category: 'popular',
+      category: 'Cipanas',
       image: [
         'image/resort-hotel-1.jpg',
         'image/resort-hotel-2.jpg',
@@ -59,7 +59,7 @@ List<hotelDestination> listHotelDestination = [
   hotelDestination(
       id: 1,
       name: "Lembah Hijau Hotel",
-      category: 'popular',
+      category: 'Cipanas',
       image: [
         'image/lembah-hijau-hotel-1.jpg',
         'image/lembah-hijau-hotel-2.jpg',
