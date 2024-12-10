@@ -18,14 +18,8 @@ class HalamanWisata extends StatefulWidget {
 class _HalamanState extends State<HalamanWisata> {
   List<TravelDestination> wisata = listDestination;
   List<hotelDestination> hotel = listHotelDestination;
-<<<<<<< HEAD
-  List<EventDestination> event = listEventDestination;
   List<KulinerDestination> kuliner = listKulinerDestination;
-
-  // List<restoDestination> popular = listRestoDestination;
-=======
-  List<KulinerDestination> popular = listKulinerDestination;
->>>>>>> de664069350a2dd4eafbdea666ba2518b2acc0ef
+  List<EventDestination> event = listEventDestination;
 
   PageController pageController = PageController();
   int pageView = 0;

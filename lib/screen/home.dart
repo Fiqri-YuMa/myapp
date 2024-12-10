@@ -111,13 +111,9 @@ List<KulinerDestination> rekomendasikuliner = listKulinerDestination
                     const SizedBox(
                       height: 10,
                     ),
-<<<<<<< HEAD
-                    const Text(
-=======
                     Container(
                       padding: EdgeInsets.only(right:110),
                       child:  Text(
->>>>>>> de664069350a2dd4eafbdea666ba2518b2acc0ef
                       "Wellcome Kabupaten Cianjur",
                       style: TextStyle(
                           color: Colors.white,
@@ -501,13 +497,8 @@ List<KulinerDestination> rekomendasikuliner = listKulinerDestination
                 ),
               ],
               currentIndex: _selectedNavbar,
-<<<<<<< HEAD
-              backgroundColor: const Color.fromARGB(255, 0, 28, 20),
-              selectedItemColor: Colors.grey,
-=======
               backgroundColor: Color.fromARGB(255, 0, 28, 20),
               selectedItemColor: Colors.teal[200],
->>>>>>> de664069350a2dd4eafbdea666ba2518b2acc0ef
               unselectedItemColor: Colors.white,
               showUnselectedLabels: true,
               onTap: _changeSelectedNavBar,
