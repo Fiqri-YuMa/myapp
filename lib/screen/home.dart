@@ -3,7 +3,7 @@ import 'package:myapp/models/destinasi_wisata.dart';
 import 'package:myapp/models/hotel_wisata.dart';
 import 'package:myapp/models/kuliner_wisata.dart';
 import 'package:myapp/screen/detail_destination.dart';
-import 'package:myapp/screen/halaman.dart';
+// import 'package:myapp/screen/halaman.dart';
 import 'package:myapp/widget/hotel.dart';
 import 'package:myapp/widget/kuliner.dart';
 import 'package:myapp/widget/wisata.dart';

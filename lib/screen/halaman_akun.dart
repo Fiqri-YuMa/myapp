@@ -13,8 +13,8 @@ class _isi_akunState extends State<isi_akun> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: 
-          IconButton(onPressed: (){}, icon: const Icon(Icons.arrow_back, color: Colors.white,)),
+      leading: 
+      IconButton(onPressed: (){}, icon: const Icon(Icons.arrow_back, color: Colors.white,)),
        title: const Text("Akun", 
        style: TextStyle(color: Colors.white, fontSize: 20),
        ),
