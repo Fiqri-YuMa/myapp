@@ -53,6 +53,9 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
+    - assets/image/bg_profil.png
+    - assets/image/poto.png
+    - assets/image/neng_selena.png
     - assets/image/logo.png
     - assets/image/ggede.png
     - assets/image/hggede.png
@@ -60,6 +63,42 @@ flutter:
     - assets/image/Vector1.png
     - assets/image/Vector2.png
     - assets/image/Vector3.png
+    - assets/image/Vector3.png
+    #wisata
+    - assets/image/gede-2.jpg
+    - assets/image/gede-3.jpg
+    - assets/image/cibodas-1.jpg
+    - assets/image/cibodas-2.jpg
+    - assets/image/cibodas-3.jpg
+    - assets/image/sevillage-1.jpg
+    - assets/image/sevillage-2.jpg
+    - assets/image/sevillage-3.jpg
+    #penginapan
+    - assets/image/palace-hotel-1.jpg
+    - assets/image/palace-hotel-2.jpg
+    - assets/image/palace-hotel-3.jpg
+    - assets/image/resort-hotel-1.jpg
+    - assets/image/resort-hotel-2.jpg
+    - assets/image/resort-hotel-3.jpg
+    - assets/image/lembah-hijau-hotel-1.jpg
+    - assets/image/lembah-hijau-hotel-2.jpg
+    - assets/image/lembah-hijau-hotel-3.jpg
+    #kuliner
+    - assets/image/sate-1.jpg
+    - assets/image/sate-2.jpg
+    - assets/image/sate-3.jpg
+    - assets/image/bumi-aki-1.jpg
+    - assets/image/bumi-aki-2.jpg
+    - assets/image/bumi-aki-3.jpg
+    - assets/image/alam-sunda-1.jpg
+    - assets/image/alam-sunda-2.jpg
+    - assets/image/alam-sunda-3.jpg
+
+
+
+
+
+
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

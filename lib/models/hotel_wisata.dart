@@ -27,15 +27,30 @@ List<hotelDestination> listHotelDestination = [
   // Popular destinations
   hotelDestination(
       id: 1,
-      name: "Gunung Bromo",
+      name: "Palace-hotel",
       category: 'popular',
       image: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
+        'image/palace-hotel-1.jpg',
+        'image/palace-hotel-2.jpg',
+        'image/palace-hotel-3.jpg',
       ],
-      location: 'Jawa Timur, Indonesia',
+      location: 'Kecamatan Cipanas, Kabupaten Cianjur',
+      review: random.nextInt(250) + 20,
+      price: 150,
+      description: description,
+      rate: 4.8),
+
+  hotelDestination(
+      id: 2,
+      name: "Puncak in Resort Hotel",
+      category: 'popular',
+      image: [
+        'image/resort-hotel-1.jpg',
+        'image/resort-hotel-2.jpg',
+        'image/resort-hotel-3.jpg',
+        
+      ],
+      location: 'Kecamatan Cipanas, Kabupaten Cianjur',
       review: random.nextInt(250) + 20,
       price: 150,
       description: description,
@@ -43,112 +58,14 @@ List<hotelDestination> listHotelDestination = [
 
   hotelDestination(
       id: 1,
-      name: "Gunung Bromo",
+      name: "Lembah Hijau Hotel",
       category: 'popular',
       image: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
+        'image/lembah-hijau-hotel-1.jpg',
+        'image/lembah-hijau-hotel-2.jpg',
+        'image/lembah-hijau-hotel-3.jpg',
       ],
-      location: 'Jawa Timur, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 150,
-      description: description,
-      rate: 4.8),
-
-  hotelDestination(
-      id: 1,
-      name: "Gunung Bromo",
-      category: 'popular',
-      image: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-      ],
-      location: 'Jawa Timur, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 150,
-      description: description,
-      rate: 4.8),
-  
- hotelDestination(
-      id: 1,
-      name: "Gunung Bromo",
-      category: 'popular',
-      image: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-      ],
-      location: 'Jawa Timur, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 150,
-      description: description,
-      rate: 4.8),
-  
-   hotelDestination(
-      id: 1,
-      name: "Gunung Bromo",
-      category: 'popular',
-      image: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-      ],
-      location: 'Jawa Timur, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 150,
-      description: description,
-      rate: 4.8),
-  
-
-  hotelDestination(
-      id: 1,
-      name: "Gunung Bromo",
-      category: 'rekomendasi',
-      image: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-      ],
-      location: 'Jawa Timur, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 150,
-      description: description,
-      rate: 4.8),
-
-  hotelDestination(
-      id: 1,
-      name: "Gunung Bromo",
-      category: 'rekomendasi',
-      image: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-      ],
-      location: 'Jawa Timur, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 150,
-      description: description,
-      rate: 4.8),
-
-  hotelDestination(
-      id: 1,
-      name: "Gunung Bromo",
-      category: 'rekomendasi',
-      image: [
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-        'image/hggede.png',
-      ],
-      location: 'Jawa Timur, Indonesia',
+      location: 'Kecamatan Cipanas, Kabupaten Cianjur',
       review: random.nextInt(250) + 20,
       price: 150,
       description: description,

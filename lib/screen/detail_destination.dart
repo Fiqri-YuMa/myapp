@@ -271,7 +271,7 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
                         Padding(
                           padding: const EdgeInsets.all(10),
                           child: Text(
-                            widget.destination.description,
+                            widget.destination.des,
                             maxLines: 3,
                             style: const TextStyle(
                               color: Colors.black54,
