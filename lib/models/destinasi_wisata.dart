@@ -27,7 +27,7 @@ List<TravelDestination> listDestination = [
   TravelDestination(
       id: 1,
       name: "Gunung Gede",
-      category: 'popular',
+      category: 'Cipanas',
       image: [
         'image/ggede.png',
         'image/gede-2.jpg',
@@ -41,7 +41,7 @@ List<TravelDestination> listDestination = [
   TravelDestination(
       id: 2,
       name: "cibodas",
-      category: 'popular',
+      category: 'Cipanas',
       image: [
         'image/cibodas-1.jpg',
         'image/cibodas-2.jpg',
@@ -55,7 +55,7 @@ List<TravelDestination> listDestination = [
   TravelDestination(
       id: 3,
       name: "Sevillage Cipanas",
-      category: 'popular',
+      category: 'Cipanas',
       image: [
         'image/sevillage-1.jpg',
         'image/sevillage-2.jpg',
