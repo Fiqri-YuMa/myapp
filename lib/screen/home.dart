@@ -6,6 +6,8 @@ import 'package:myapp/widget/hotel.dart';
 import 'package:myapp/widget/wisata.dart';
 
 class BelajarNavBar extends StatefulWidget {
+  const BelajarNavBar({super.key});
+
   @override
   _BelajarNavBarState createState() => _BelajarNavBarState();
 }
@@ -48,8 +50,8 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
       appBar: AppBar(
         flexibleSpace: Container(
           height: 100,
-          margin: EdgeInsets.only(left: 20),
-          decoration: BoxDecoration(
+          margin: const EdgeInsets.only(left: 20),
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('image/logo.png'),
               fit: BoxFit.none,
@@ -59,18 +61,18 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 0, 28, 20),
+        backgroundColor: const Color.fromARGB(255, 0, 28, 20),
         actions: [
           Container(
-            padding: EdgeInsets.only(top: 12, bottom: 12),
+            padding: const EdgeInsets.only(top: 12, bottom: 12),
             child: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(30)),
+              borderRadius: const BorderRadius.all(Radius.circular(30)),
               child: Container(
-                padding: EdgeInsets.only(right: 80, bottom: 25),
-                color: Color.fromARGB(255, 0, 16, 12),
+                padding: const EdgeInsets.only(right: 80, bottom: 25),
+                color: const Color.fromARGB(255, 0, 16, 12),
                 child: IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.location_on),
+                  icon: const Icon(Icons.location_on),
                   alignment: Alignment.centerLeft,
                   color: Colors.white,
                 ),
@@ -79,27 +81,27 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.search,
               color: Colors.white,
             ),
           ),
         ],
       ),
-      backgroundColor: Color.fromARGB(255, 1, 44, 32),
+      backgroundColor: const Color.fromARGB(255, 1, 44, 32),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
                 height: 110,
-                padding: EdgeInsets.only(right: 10, left: 10),
-                color: Color.fromARGB(255, 0, 57, 41),
+                padding: const EdgeInsets.only(right: 10, left: 10),
+                color: const Color.fromARGB(255, 0, 57, 41),
                 child: Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Text(
+                    const Text(
                       "Wellcome Kabupaten Cianjur",
                       style: TextStyle(
                           color: Colors.white,
@@ -109,8 +111,8 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                       textAlign: TextAlign.left,
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
-                      child: Text(
+                      padding: const EdgeInsets.all(10),
+                      child: const Text(
                         "Cari dan tentukan wisata pilihan di tiap-tiap kecamatan yang ada di kabupaten Cianjur",
                         style: TextStyle(
                           color: Colors.white,
@@ -123,7 +125,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                 ),),
             Container(
               height: 120,
-              padding: EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -132,15 +134,15 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                       Container(
                         width: 70,
                         height: 70,
-                        margin: EdgeInsets.only(bottom: 5),
+                        margin: const EdgeInsets.only(bottom: 5),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          borderRadius: const BorderRadius.all(Radius.circular(50)),
                           child: Container(
-                            padding: EdgeInsets.all(2),
-                            color: Color.fromARGB(255, 30, 30, 30),
+                            padding: const EdgeInsets.all(2),
+                            color: const Color.fromARGB(255, 30, 30, 30),
                             child: IconButton(
                                 onPressed: () {},
-                                icon: Image(
+                                icon: const Image(
                                   image: AssetImage(
                                     'image/Vector.png',
                                   ),
@@ -149,7 +151,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                           ),
                         ),
                       ),
-                      Text(
+                      const Text(
                         'Wisata',
                         style: TextStyle(
                             color: Colors.white,
@@ -163,15 +165,15 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                       Container(
                         width: 70,
                         height: 70,
-                        margin: EdgeInsets.only(bottom: 5),
+                        margin: const EdgeInsets.only(bottom: 5),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          borderRadius: const BorderRadius.all(Radius.circular(50)),
                           child: Container(
-                            padding: EdgeInsets.all(2),
-                            color: Color.fromARGB(255, 30, 30, 30),
+                            padding: const EdgeInsets.all(2),
+                            color: const Color.fromARGB(255, 30, 30, 30),
                             child: IconButton(
                                 onPressed: () {},
-                                icon: Image(
+                                icon: const Image(
                                   image: AssetImage(
                                     'image/Vector1.png',
                                   ),
@@ -180,7 +182,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                           ),
                         ),
                       ),
-                      Text(
+                      const Text(
                         'Penginapan',
                         style: TextStyle(
                             color: Colors.white,
@@ -194,15 +196,15 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                       Container(
                         width: 70,
                         height: 70,
-                        margin: EdgeInsets.only(bottom: 5),
+                        margin: const EdgeInsets.only(bottom: 5),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          borderRadius: const BorderRadius.all(Radius.circular(50)),
                           child: Container(
-                            padding: EdgeInsets.all(2),
-                            color: Color.fromARGB(255, 30, 30, 30),
+                            padding: const EdgeInsets.all(2),
+                            color: const Color.fromARGB(255, 30, 30, 30),
                             child: IconButton(
                                 onPressed: () {},
-                                icon: Image(
+                                icon: const Image(
                                   image: AssetImage(
                                     'image/Vector2.png',
                                   ),
@@ -211,7 +213,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                           ),
                         ),
                       ),
-                      Text(
+                      const Text(
                         'Kuliner',
                         style: TextStyle(
                             color: Colors.white,
@@ -225,15 +227,15 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                       Container(
                         width: 70,
                         height: 70,
-                        margin: EdgeInsets.only(bottom: 5),
+                        margin: const EdgeInsets.only(bottom: 5),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          borderRadius: const BorderRadius.all(Radius.circular(50)),
                           child: Container(
-                            padding: EdgeInsets.all(2),
-                            color: Color.fromARGB(255, 30, 30, 30),
+                            padding: const EdgeInsets.all(2),
+                            color: const Color.fromARGB(255, 30, 30, 30),
                             child: IconButton(
                               onPressed: () {},
-                              icon: Image(
+                              icon: const Image(
                                 image: AssetImage(
                                   'image/Vector3.png',
                                 ),
@@ -243,7 +245,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                           ),
                         ),
                       ),
-                      Text(
+                      const Text(
                         'Event',
                         style: TextStyle(
                             color: Colors.white,
@@ -255,13 +257,13 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
-              color: Color.fromARGB(255, 0, 28, 20),
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: Padding(
+              color: const Color.fromARGB(255, 0, 28, 20),
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -290,15 +292,15 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
             ),
             Container(
               height: 349,
-              color: Color.fromARGB(255, 3, 22, 17),
+              color: const Color.fromARGB(255, 3, 22, 17),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.only(left: 15),
+                padding: const EdgeInsets.only(left: 15),
                 child: Row(
                   children: List.generate(
                     popular.length,
                     (index) => Padding(
-                      padding: EdgeInsets.only(right: 10),
+                      padding: const EdgeInsets.only(right: 10),
                       child: GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -317,9 +319,9 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
               ),
             ),
             Container(
-              color: Color.fromARGB(255, 0, 28, 20),
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: Padding(
+              color: const Color.fromARGB(255, 0, 28, 20),
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -348,15 +350,15 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
             ),
             Container(
               height: 349,
-              color: Color.fromARGB(255, 3, 22, 17),
+              color: const Color.fromARGB(255, 3, 22, 17),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.only(left: 15),
+                padding: const EdgeInsets.only(left: 15),
                 child: Row(
                   children: List.generate(
                     popular.length,
                     (index) => Padding(
-                      padding: EdgeInsets.only(right: 10),
+                      padding: const EdgeInsets.only(right: 10),
                       child: GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -403,10 +405,10 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
         ),
       ),
       bottomNavigationBar: Container(
-        color: Color.fromARGB(255, 0, 57, 41),
-        padding: EdgeInsets.only(bottom: 20, left: 10, right: 10, top: 15),
+        color: const Color.fromARGB(255, 0, 57, 41),
+        padding: const EdgeInsets.only(bottom: 20, left: 10, right: 10, top: 15),
         child: ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
           child: Container(
             child: BottomNavigationBar(
               items: const <BottomNavigationBarItem>[
@@ -424,7 +426,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                 ),
               ],
               currentIndex: _selectedNavbar,
-              backgroundColor: Color.fromARGB(255, 0, 28, 20),
+              backgroundColor: const Color.fromARGB(255, 0, 28, 20),
               selectedItemColor: Colors.grey,
               unselectedItemColor: Colors.white,
               showUnselectedLabels: true,

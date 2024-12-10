@@ -1,5 +1,4 @@
 import 'package:myapp/screen/halaman.dart';
-import 'package:myapp/screen/home.dart';
 import 'package:flutter/material.dart';
 
 class explore_cianjur extends StatelessWidget {
@@ -7,13 +6,13 @@ class explore_cianjur extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HalamanWisata(jenis: 2,),
+      home: HalamanWisata(jenis: 1),
     );
   }
 }
 
 void main() {
-  runApp(explore_cianjur());
+  runApp(const explore_cianjur());
 }

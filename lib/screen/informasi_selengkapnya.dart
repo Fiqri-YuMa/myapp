@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/models/destinasi_wisata.dart';
 
 class InformasiSelengkapnya extends StatefulWidget {
   final int id;

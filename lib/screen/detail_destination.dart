@@ -16,20 +16,20 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 0, 28, 20),
+        backgroundColor: const Color.fromARGB(255, 0, 28, 20),
         actions: [
           Container(
-            padding: EdgeInsets.only(top: 12, bottom: 12),
+            padding: const EdgeInsets.only(top: 12, bottom: 12),
             child: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(30)),
+              borderRadius: const BorderRadius.all(Radius.circular(30)),
               child: Container(
-                padding: EdgeInsets.only(right: 80, bottom: 25),
-                color: Color.fromARGB(255, 0, 16, 12),
+                padding: const EdgeInsets.only(right: 80, bottom: 25),
+                color: const Color.fromARGB(255, 0, 16, 12),
                 child: IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.location_on),
+                  icon: const Icon(Icons.location_on),
                   alignment: Alignment.centerLeft,
                   color: Colors.white,
                 ),
@@ -38,7 +38,7 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.search,
               color: Colors.white,
             ),
@@ -49,7 +49,7 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
         children: [
           Column(
             children: [
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.54,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(0),
@@ -248,7 +248,7 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.60,
-                    child: TabBar(
+                    child: const TabBar(
                       tabs: [
                         Tab(
                           text: 'Deskripsi',
@@ -269,18 +269,18 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
                     child: TabBarView(
                       children: [
                         Padding(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           child: Text(
                             widget.destination.description,
                             maxLines: 3,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.black54,
                               fontSize: 14,
                               height: 1.5,
                             ),
                           ),
                         ),
-                        Center(
+                        const Center(
                           child: Text("tidak ada Review"),
                         )
                       ],

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/models/destinasi_wisata.dart';
+import 'package:myapp/models/event_wisata.dart';
 import 'package:myapp/models/hotel_wisata.dart';
+import 'package:myapp/models/kuliner_wisata.dart';
 import 'package:myapp/screen/detail_destination.dart';
+import 'package:myapp/widget/hotel.dart';
+import 'package:myapp/widget/kuliner.dart';
 import 'package:myapp/widget/wisata.dart';
 
 class HalamanWisata extends StatefulWidget {
@@ -14,6 +18,9 @@ class HalamanWisata extends StatefulWidget {
 class _HalamanState extends State<HalamanWisata> {
   List<TravelDestination> wisata = listDestination;
   List<hotelDestination> hotel = listHotelDestination;
+  List<EventDestination> event = listEventDestination;
+  List<KulinerDestination> kuliner = listKulinerDestination;
+
   // List<restoDestination> popular = listRestoDestination;
 
   PageController pageController = PageController();
@@ -21,22 +28,33 @@ class _HalamanState extends State<HalamanWisata> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
+    List pilihan;
+    if (widget.jenis == 1) {
+      pilihan = wisata;
+    } else if (widget.jenis == 2) {
+      pilihan = hotel;
+    } else if (widget.jenis == 3) {
+      pilihan = event;
+    } else {
+      pilihan = kuliner;
+    }
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 0, 28, 20),
+        backgroundColor: const Color.fromARGB(255, 0, 28, 20),
         actions: [
           Container(
-            padding: EdgeInsets.only(top: 12, bottom: 12),
+            padding: const EdgeInsets.only(top: 12, bottom: 12),
             child: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(30)),
+              borderRadius: const BorderRadius.all(Radius.circular(30)),
               child: Container(
-                padding: EdgeInsets.only(right: 80, bottom: 25),
-                color: Color.fromARGB(255, 0, 16, 12),
+                padding: const EdgeInsets.only(right: 80, bottom: 25),
+                color: const Color.fromARGB(255, 0, 16, 12),
                 child: IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.location_on),
+                  icon: const Icon(Icons.location_on),
                   alignment: Alignment.centerLeft,
                   color: Colors.white,
                 ),
@@ -45,7 +63,7 @@ class _HalamanState extends State<HalamanWisata> {
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.search,
               color: Colors.white,
             ),
@@ -56,8 +74,8 @@ class _HalamanState extends State<HalamanWisata> {
         children: [
           Container(
             height: 120,
-            color: Color.fromARGB(255, 0, 16, 12),
-            padding: EdgeInsets.only(top: 20),
+            color: const Color.fromARGB(255, 0, 16, 12),
+            padding: const EdgeInsets.only(top: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -66,15 +84,17 @@ class _HalamanState extends State<HalamanWisata> {
                     Container(
                       width: 70,
                       height: 70,
-                      margin: EdgeInsets.only(bottom: 5),
+                      margin: const EdgeInsets.only(bottom: 5),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                        borderRadius: const BorderRadius.all(Radius.circular(50)),
                         child: Container(
-                          padding: EdgeInsets.all(2),
-                          color: Color.fromARGB(255, 30, 30, 30),
+                          padding: const EdgeInsets.all(2),
+                          color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
-                              onPressed: () {},
-                              icon: Image(
+                              onPressed: () {
+                                const HalamanWisata(jenis: 1);
+                              },
+                              icon: const Image(
                                 image: AssetImage(
                                   'image/Vector.png',
                                 ),
@@ -83,7 +103,7 @@ class _HalamanState extends State<HalamanWisata> {
                         ),
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Wisata',
                       style: TextStyle(
                           color: Colors.white,
@@ -97,15 +117,17 @@ class _HalamanState extends State<HalamanWisata> {
                     Container(
                       width: 70,
                       height: 70,
-                      margin: EdgeInsets.only(bottom: 5),
+                      margin: const EdgeInsets.only(bottom: 5),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                        borderRadius: const BorderRadius.all(Radius.circular(50)),
                         child: Container(
-                          padding: EdgeInsets.all(2),
-                          color: Color.fromARGB(255, 30, 30, 30),
+                          padding: const EdgeInsets.all(2),
+                          color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
-                              onPressed: () {},
-                              icon: Image(
+                              onPressed: () {
+                                const HalamanWisata(jenis: 2);
+                              },
+                              icon: const Image(
                                 image: AssetImage(
                                   'image/Vector1.png',
                                 ),
@@ -114,7 +136,7 @@ class _HalamanState extends State<HalamanWisata> {
                         ),
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Penginapan',
                       style: TextStyle(
                           color: Colors.white,
@@ -128,15 +150,17 @@ class _HalamanState extends State<HalamanWisata> {
                     Container(
                       width: 70,
                       height: 70,
-                      margin: EdgeInsets.only(bottom: 5),
+                      margin: const EdgeInsets.only(bottom: 5),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                        borderRadius: const BorderRadius.all(Radius.circular(50)),
                         child: Container(
-                          padding: EdgeInsets.all(2),
-                          color: Color.fromARGB(255, 30, 30, 30),
+                          padding: const EdgeInsets.all(2),
+                          color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
-                              onPressed: () {},
-                              icon: Image(
+                              onPressed: () {
+                                const HalamanWisata(jenis: 3);
+                              },
+                              icon: const Image(
                                 image: AssetImage(
                                   'image/Vector2.png',
                                 ),
@@ -145,7 +169,7 @@ class _HalamanState extends State<HalamanWisata> {
                         ),
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Kuliner',
                       style: TextStyle(
                           color: Colors.white,
@@ -159,15 +183,17 @@ class _HalamanState extends State<HalamanWisata> {
                     Container(
                       width: 70,
                       height: 70,
-                      margin: EdgeInsets.only(bottom: 5),
+                      margin: const EdgeInsets.only(bottom: 5),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                        borderRadius: const BorderRadius.all(Radius.circular(50)),
                         child: Container(
-                          padding: EdgeInsets.all(2),
-                          color: Color.fromARGB(255, 30, 30, 30),
+                          padding: const EdgeInsets.all(2),
+                          color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
-                            onPressed: () {},
-                            icon: Image(
+                            onPressed: () {
+                              const HalamanWisata(jenis: 4);
+                            },
+                            icon: const Image(
                               image: AssetImage(
                                 'image/Vector3.png',
                               ),
@@ -177,7 +203,7 @@ class _HalamanState extends State<HalamanWisata> {
                         ),
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Event',
                       style: TextStyle(
                           color: Colors.white,
@@ -191,9 +217,9 @@ class _HalamanState extends State<HalamanWisata> {
           ),
           Container(
             width: MediaQuery.sizeOf(context).width,
-            color: Color.fromARGB(255, 0, 28, 20),
-            padding: EdgeInsets.only(left: 30,top: 10,bottom: 10),
-            child: Text(
+            color: const Color.fromARGB(255, 0, 28, 20),
+            padding: const EdgeInsets.only(left: 30, top: 10, bottom: 10),
+            child: const Text(
               'Wisata Cipanas',
               style: TextStyle(
                 fontSize: 12,
@@ -207,24 +233,37 @@ class _HalamanState extends State<HalamanWisata> {
           Expanded(
             child: Container(
               width: MediaQuery.sizeOf(context).width,
-              color: Color.fromARGB(255, 3, 22, 17),
+              color: const Color.fromARGB(255, 3, 22, 17),
               child: SingleChildScrollView(
                 child: Column(
                   children: List.generate(
                     wisata.length,
                     (index) => Padding(
-                      padding: EdgeInsets.only(top: 20, left: 10, right: 10),
+                      padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) =>
-                                  DetailDestinasi(destination: wisata[index]),
-                            ),
-                          );
+                          if (widget.jenis == 1) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) =>
+                                    DetailDestinasi(destination: pilihan[index]),
+                              ),
+                            );
+                          }
                         },
-                        child: halamanDestination(destination: wisata[index]),
+                        child: Builder(builder: (context) {
+                          if(widget.jenis==1){
+                            return halamanDestination(destination: pilihan[index]);
+                          }else if(widget.jenis==2){
+                            return halamanDestination2(destination: pilihan[index]);
+                          }else if(widget.jenis==3){
+                            return halamanDestination3(destination: pilihan[index]);
+                          }else{
+                            return PopularKulinerDestination(destination: pilihan[index]);
+                          }
+                        },),
+                        // child: halamanDestination(destination: pilihan[index]),
                       ),
                     ),
                   ),
@@ -235,10 +274,10 @@ class _HalamanState extends State<HalamanWisata> {
         ],
       ),
       bottomNavigationBar: Container(
-        color: Color.fromARGB(255, 0, 57, 41),
-        padding: EdgeInsets.only(bottom: 20, left: 10, right: 10, top: 15),
+        color: const Color.fromARGB(255, 0, 57, 41),
+        padding: const EdgeInsets.only(bottom: 20, left: 10, right: 10, top: 15),
         child: ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
           child: Container(
             child: BottomNavigationBar(
               items: const <BottomNavigationBarItem>[
@@ -256,7 +295,7 @@ class _HalamanState extends State<HalamanWisata> {
                 ),
               ],
               // currentIndex: _selectedNavbar,
-              backgroundColor: Color.fromARGB(255, 0, 28, 20),
+              backgroundColor: const Color.fromARGB(255, 0, 28, 20),
               selectedItemColor: Colors.grey,
               unselectedItemColor: Colors.white,
               showUnselectedLabels: true,
