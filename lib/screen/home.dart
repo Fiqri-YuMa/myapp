@@ -482,6 +482,39 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
           ],
         ),
       ),
+      bottomNavigationBar: Container(
+        color: const Color.fromARGB(255, 0, 57, 41),
+        padding:
+            const EdgeInsets.only(bottom: 20, left: 10, right: 10, top: 15),
+        child: ClipRRect(
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
+          child: Container(
+            child: BottomNavigationBar(
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.bookmark),
+                  label: 'Favorit',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person),
+                  label: 'Akun',
+                ),
+              ],
+              currentIndex: _selectedNavbar,
+              backgroundColor: Color.fromARGB(255, 0, 28, 20),
+              selectedItemColor: Colors.teal[200],
+              unselectedItemColor: Colors.white,
+              showUnselectedLabels: true,
+              onTap: (value) {
+              },
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
