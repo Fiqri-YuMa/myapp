@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:648545984.
 class FavoritePage extends StatefulWidget {
-  const FavoritePage({Key? key}) : super(key: key);
+  const FavoritePage({super.key});
 
   @override
   _FavoritePageState createState() => _FavoritePageState();
 }
 
 class _FavoritePageState extends State<FavoritePage> {
-  int _selectedNavbar = 0;
   void _changeSelectedNavBar(int index) {
     setState(() {
       _selectedNavbar = index;
@@ -19,25 +18,25 @@ class _FavoritePageState extends State<FavoritePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 0, 28, 20),
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            // Tambahkan fungsi untuk kembali di sini
-          },
-        ),
-        title: Text('Favorit', style: TextStyle(color: Colors.white)),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search, color: Colors.white),
-            onPressed: () {
-              // Tambahkan fungsi pencarian di sini
-            },
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: const Color.fromARGB(255, 0, 28, 20),
+      //   elevation: 0,
+      //   leading: IconButton(
+      //     icon: const Icon(Icons.arrow_back, color: Colors.white),
+      //     onPressed: () {
+      //       // Tambahkan fungsi untuk kembali di sini
+      //     },
+      //   ),
+      //   title: const Text('Favorit', style: TextStyle(color: Colors.white)),
+      //   actions: [
+      //     IconButton(
+      //       icon: const Icon(Icons.search, color: Colors.white),
+      //       onPressed: () {
+      //         // Tambahkan fungsi pencarian di sini
+      //       },
+      //     ),
+      //   ],
+      // ),
       body: Column(
         children: [
           // Container untuk pemisah area kategori
@@ -147,7 +146,7 @@ class _FavoritePageState extends State<FavoritePage> {
               ],
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -164,38 +163,6 @@ class _FavoritePageState extends State<FavoritePage> {
           ),
         ],
       ),
-      bottomNavigationBar: Container(
-        color: const Color.fromARGB(255, 0, 57, 41),
-        padding:
-            const EdgeInsets.only(bottom: 20, left: 10, right: 10, top: 15),
-        child: ClipRRect(
-          borderRadius: const BorderRadius.all(Radius.circular(20)),
-          child: Container(
-            child: BottomNavigationBar(
-              items: const <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
-                  label: 'Home',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.bookmark),
-                  label: 'Favorit',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
-                  label: 'Akun',
-                ),
-              ],
-              currentIndex: _selectedNavbar,
-              backgroundColor: Color.fromARGB(255, 0, 28, 20),
-              selectedItemColor: Colors.teal[200],
-              unselectedItemColor: Colors.white,
-              showUnselectedLabels: true,
-              onTap: _changeSelectedNavBar,
-            ),
-          ),
-        ),
-      ),
     );
   }
 }
@@ -205,7 +172,7 @@ class CategoryButton extends StatelessWidget {
   final String label;
   final Color color;
 
-  const CategoryButton({
+  const CategoryButton({super.key, 
     required this.icon,
     required this.label,
     required this.color,
@@ -220,10 +187,10 @@ class CategoryButton extends StatelessWidget {
           backgroundColor: color.withOpacity(0.2),
           child: Icon(icon, size: 30, color: color),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Text(
           label,
-          style: TextStyle(fontSize: 14, color: Colors.white),
+          style: const TextStyle(fontSize: 14, color: Colors.white),
         ),
       ],
     );
