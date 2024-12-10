@@ -9,11 +9,6 @@ class FavoritePage extends StatefulWidget {
 }
 
 class _FavoritePageState extends State<FavoritePage> {
-  void _changeSelectedNavBar(int index) {
-    setState(() {
-      _selectedNavbar = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
