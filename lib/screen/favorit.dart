@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:648545984.
 class FavoritePage extends StatefulWidget {
   const FavoritePage({Key? key}) : super(key: key);
@@ -10,12 +9,18 @@ class FavoritePage extends StatefulWidget {
 }
 
 class _FavoritePageState extends State<FavoritePage> {
+  int _selectedNavbar = 0;
+  void _changeSelectedNavBar(int index) {
+    setState(() {
+      _selectedNavbar = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 28, 20),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 0, 28, 20),
+        backgroundColor: const Color.fromARGB(255, 0, 28, 20),
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
@@ -37,14 +42,108 @@ class _FavoritePageState extends State<FavoritePage> {
         children: [
           // Container untuk pemisah area kategori
           Container(
-            color: const Color.fromARGB(255, 1, 44, 32), // Warna pemisah lebih terang
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            color: const Color.fromARGB(255, 0, 57, 41),
+            height: 120,
+            padding: const EdgeInsets.only(top: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                CategoryButton(icon: Icons.flight, label: 'Wisata', color: Colors.green),
-                CategoryButton(icon: Icons.hotel, label: 'Penginapan', color: Colors.orange),
-                CategoryButton(icon: Icons.restaurant, label: 'Kuliner', color: Colors.red),
+                Column(
+                  children: [
+                    Container(
+                      width: 70,
+                      height: 70,
+                      margin: const EdgeInsets.only(bottom: 5),
+                      child: ClipRRect(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(50)),
+                        child: Container(
+                          padding: const EdgeInsets.all(2),
+                          color: const Color.fromARGB(255, 30, 30, 30),
+                          child: IconButton(
+                              onPressed: () {},
+                              icon: const Image(
+                                image: AssetImage(
+                                  'image/Vector.png',
+                                ),
+                                fit: BoxFit.cover,
+                              )),
+                        ),
+                      ),
+                    ),
+                    const Text(
+                      'Wisata',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Roboto',
+                          fontSize: 12),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                      width: 70,
+                      height: 70,
+                      margin: const EdgeInsets.only(bottom: 5),
+                      child: ClipRRect(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(50)),
+                        child: Container(
+                          padding: const EdgeInsets.all(2),
+                          color: const Color.fromARGB(255, 30, 30, 30),
+                          child: IconButton(
+                              onPressed: () {},
+                              icon: const Image(
+                                image: AssetImage(
+                                  'image/Vector1.png',
+                                ),
+                                fit: BoxFit.cover,
+                              )),
+                        ),
+                      ),
+                    ),
+                    const Text(
+                      'Penginapan',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Roboto',
+                          fontSize: 12),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                      width: 70,
+                      height: 70,
+                      margin: const EdgeInsets.only(bottom: 5),
+                      child: ClipRRect(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(50)),
+                        child: Container(
+                          padding: const EdgeInsets.all(2),
+                          color: const Color.fromARGB(255, 30, 30, 30),
+                          child: IconButton(
+                              onPressed: () {},
+                              icon: const Image(
+                                image: AssetImage(
+                                  'image/Vector2.png',
+                                ),
+                                fit: BoxFit.cover,
+                              )),
+                        ),
+                      ),
+                    ),
+                    const Text(
+                      'Kuliner',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Roboto',
+                          fontSize: 12),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
@@ -53,11 +152,11 @@ class _FavoritePageState extends State<FavoritePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.insert_drive_file, size: 80, color: Colors.white),
+                  Icon(Icons.insert_drive_file, size: 80, color: Colors.grey),
                   SizedBox(height: 16),
                   Text(
                     'Belum Ada Data Favorit',
-                    style: TextStyle(fontSize: 16, color: Colors.white),
+                    style: TextStyle(fontSize: 16, color: Colors.grey),
                   ),
                 ],
               ),
@@ -65,33 +164,36 @@ class _FavoritePageState extends State<FavoritePage> {
           ),
         ],
       ),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(16), // Radius melengkung di kiri atas
-          topRight: Radius.circular(16), // Radius melengkung di kanan atas
-        ),
-        child: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
+      bottomNavigationBar: Container(
+        color: const Color.fromARGB(255, 0, 57, 41),
+        padding:
+            const EdgeInsets.only(bottom: 20, left: 10, right: 10, top: 15),
+        child: ClipRRect(
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
+          child: Container(
+            child: BottomNavigationBar(
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.bookmark),
+                  label: 'Favorit',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person),
+                  label: 'Akun',
+                ),
+              ],
+              currentIndex: _selectedNavbar,
+              backgroundColor: Color.fromARGB(255, 0, 28, 20),
+              selectedItemColor: Colors.teal[200],
+              unselectedItemColor: Colors.white,
+              showUnselectedLabels: true,
+              onTap: _changeSelectedNavBar,
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.bookmark),
-              label: 'Favorit',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Akun',
-            ),
-          ],
-          selectedItemColor: Colors.green,
-          unselectedItemColor: Colors.grey,
-          backgroundColor: Color.fromARGB(255, 1, 44, 32), // Warna latar belakang navigasi bawah
-          currentIndex: 1, // Tab Favorit aktif secara default
-          onTap: (index) {
-            // Tambahkan navigasi jika diperlukan
-          },
+          ),
         ),
       ),
     );

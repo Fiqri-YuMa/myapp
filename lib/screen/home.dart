@@ -3,6 +3,7 @@ import 'package:myapp/models/destinasi_wisata.dart';
 import 'package:myapp/models/hotel_wisata.dart';
 import 'package:myapp/models/kuliner_wisata.dart';
 import 'package:myapp/screen/detail_destination.dart';
+import 'package:myapp/screen/halaman.dart';
 import 'package:myapp/widget/hotel.dart';
 import 'package:myapp/widget/kuliner.dart';
 import 'package:myapp/widget/wisata.dart';
@@ -16,6 +17,7 @@ class BelajarNavBar extends StatefulWidget {
 
 class _BelajarNavBarState extends State<BelajarNavBar> {
   int _selectedNavbar = 0;
+  int pilihan = 0;
 
   List<TravelDestination> popular = listDestination
       .where((element) => element.category == 'popular')
@@ -33,7 +35,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
       .where((element) => element.category == 'popular')
       .toList();
 
-List<KulinerDestination> rekomendasikuliner = listKulinerDestination
+  List<KulinerDestination> rekomendasikuliner = listKulinerDestination
       .where((element) => element.category == 'rekomendasi')
       .toList();
 
@@ -103,17 +105,17 @@ List<KulinerDestination> rekomendasikuliner = listKulinerDestination
         child: Column(
           children: [
             Container(
-                height: 110,
-                padding: const EdgeInsets.only(right: 10, left: 10),
-                color: const Color.fromARGB(255, 0, 57, 41),
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(right:110),
-                      child:  Text(
+              height: 110,
+              padding: const EdgeInsets.only(right: 10, left: 10),
+              color: const Color.fromARGB(255, 0, 57, 41),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(right: 110),
+                    child: Text(
                       "Wellcome Kabupaten Cianjur",
                       style: TextStyle(
                           color: Colors.white,
@@ -121,20 +123,21 @@ List<KulinerDestination> rekomendasikuliner = listKulinerDestination
                           fontFamily: 'Roboto',
                           fontWeight: FontWeight.bold),
                     ),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      child: const Text(
-                        "Cari dan tentukan wisata pilihan di tiap-tiap kecamatan yang ada di kabupaten Cianjur",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Roboto',
-                          fontSize: 13,
-                        ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    child: const Text(
+                      "Cari dan tentukan wisata pilihan di tiap-tiap kecamatan yang ada di kabupaten Cianjur",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Roboto',
+                        fontSize: 13,
                       ),
                     ),
-                  ],
-                ),),
+                  ),
+                ],
+              ),
+            ),
             Container(
               height: 120,
               padding: const EdgeInsets.only(top: 20),
@@ -148,7 +151,8 @@ List<KulinerDestination> rekomendasikuliner = listKulinerDestination
                         height: 70,
                         margin: const EdgeInsets.only(bottom: 5),
                         child: ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(50)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(50)),
                           child: Container(
                             padding: const EdgeInsets.all(2),
                             color: const Color.fromARGB(255, 30, 30, 30),
@@ -179,7 +183,8 @@ List<KulinerDestination> rekomendasikuliner = listKulinerDestination
                         height: 70,
                         margin: const EdgeInsets.only(bottom: 5),
                         child: ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(50)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(50)),
                           child: Container(
                             padding: const EdgeInsets.all(2),
                             color: const Color.fromARGB(255, 30, 30, 30),
@@ -210,7 +215,8 @@ List<KulinerDestination> rekomendasikuliner = listKulinerDestination
                         height: 70,
                         margin: const EdgeInsets.only(bottom: 5),
                         child: ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(50)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(50)),
                           child: Container(
                             padding: const EdgeInsets.all(2),
                             color: const Color.fromARGB(255, 30, 30, 30),
@@ -241,7 +247,8 @@ List<KulinerDestination> rekomendasikuliner = listKulinerDestination
                         height: 70,
                         margin: const EdgeInsets.only(bottom: 5),
                         child: ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(50)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(50)),
                           child: Container(
                             padding: const EdgeInsets.all(2),
                             color: const Color.fromARGB(255, 30, 30, 30),
@@ -289,10 +296,9 @@ List<KulinerDestination> rekomendasikuliner = listKulinerDestination
                         color: Colors.white,
                       ),
                     ),
-                    
                     Text(
                       'Lihat Semua >',
-                       style: TextStyle(
+                      style: TextStyle(
                         fontSize: 12,
                         fontFamily: 'League Spartan',
                         fontWeight: FontWeight.w500,
@@ -409,7 +415,7 @@ List<KulinerDestination> rekomendasikuliner = listKulinerDestination
                     ),
                     Text(
                       'Lihat Semua >',
-                       style: TextStyle(
+                      style: TextStyle(
                         fontSize: 12,
                         fontFamily: 'League Spartan',
                         fontWeight: FontWeight.w500,
@@ -441,7 +447,8 @@ List<KulinerDestination> rekomendasikuliner = listKulinerDestination
                             ),
                           );
                         },
-                        child: PopularKulinerDestination(destination: popularkuliner[index]),
+                        child: PopularKulinerDestination(
+                            destination: popularkuliner[index]),
                       ),
                     ),
                   ),
@@ -473,37 +480,6 @@ List<KulinerDestination> rekomendasikuliner = listKulinerDestination
             //   ),
             // ),
           ],
-        ),
-      ),
-      bottomNavigationBar: Container(
-        color: const Color.fromARGB(255, 0, 57, 41),
-        padding: const EdgeInsets.only(bottom: 20, left: 10, right: 10, top: 15),
-        child: ClipRRect(
-          borderRadius: const BorderRadius.all(Radius.circular(20)),
-          child: Container(
-            child: BottomNavigationBar(
-              items: const <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
-                  label: 'Home',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.bookmark),
-                  label: 'Favorit',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
-                  label: 'Akun',
-                ),
-              ],
-              currentIndex: _selectedNavbar,
-              backgroundColor: Color.fromARGB(255, 0, 28, 20),
-              selectedItemColor: Colors.teal[200],
-              unselectedItemColor: Colors.white,
-              showUnselectedLabels: true,
-              onTap: _changeSelectedNavBar,
-            ),
-          ),
         ),
       ),
     );
