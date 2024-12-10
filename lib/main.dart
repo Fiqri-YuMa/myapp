@@ -1,8 +1,19 @@
+<<<<<<< HEAD
 import 'package:myapp/screen/favorit.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/screen/halaman_akun.dart';
 import 'package:myapp/screen/home.dart';
 import 'package:myapp/widget/sidebar.dart';
+=======
+// import 'package:myapp/screen/halaman.dart';
+// import 'package:myapp/screen/favorit.dart';
+// import 'package:myapp/screen/halaman_akun.dart';
+// import 'package:myapp/screen/home.dart';
+import 'package:flutter/material.dart';
+import 'package:myapp/screen/home.dart';
+import 'package:myapp/screen/informasi_wisata.dart';
+
+>>>>>>> 0ef73c1a111f200ef2adfaa24af67a6124f7694c
 
 class ExploreCianjur extends StatelessWidget {
   const ExploreCianjur({super.key});
@@ -11,7 +22,15 @@ class ExploreCianjur extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+<<<<<<< HEAD
       home: const MainPage(),
+=======
+      home: informasi_1(destination: [
+        'image/ggede.png',
+        'image/gede-2.jpg',
+        'image/gede-3.jpg',
+      ],),
+>>>>>>> 0ef73c1a111f200ef2adfaa24af67a6124f7694c
     );
   }
 }

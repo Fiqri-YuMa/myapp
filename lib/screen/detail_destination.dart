@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/models/destinasi_wisata.dart';
+import 'package:myapp/screen/informasi_wisata.dart';
 
 class DetailDestinasi extends StatefulWidget {
   final TravelDestination destination;
@@ -344,7 +345,10 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // Navigator.push(context, MaterialPageRoute(builder: ())),),
+                      // return informasi_1(widget.destination.image),
+                    },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
                         vertical: 15,
