@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget {
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:648545984.
+class FavoritePage extends StatefulWidget {
+  const FavoritePage({Key? key}) : super(key: key);
+
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: FavoritePage(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
+  _FavoritePageState createState() => _FavoritePageState();
 }
 
-class FavoritePage extends StatelessWidget {
+class _FavoritePageState extends State<FavoritePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
