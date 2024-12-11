@@ -17,7 +17,6 @@ class BelajarNavBar extends StatefulWidget {
 }
 
 class _BelajarNavBarState extends State<BelajarNavBar> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   late List<TravelDestination> wisata = listDestination
       .where((element) => element.category == widget.pilihan)
       .toList();
@@ -317,7 +316,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                             context,
                             MaterialPageRoute(
                               builder: (_) =>
-                                  DetailDestinasi(destination: wisata[index]),
+                                  DetailDestinasi1(destination: hotel[index]),
                             ),
                           );
                         },
@@ -376,7 +375,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                             context,
                             MaterialPageRoute(
                               builder: (_) =>
-                                  DetailDestinasi(destination: wisata[index]),
+                                  DetailDestinasi2(destination: kuliner[index]),
                             ),
                           );
                         },
