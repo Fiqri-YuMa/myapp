@@ -19,19 +19,19 @@ class _informasi_1State extends State<informasi_1> {
       appBar: AppBar(
       leading: 
       IconButton(onPressed:(){}, icon: 
-      Icon(
+      const Icon(
         Icons.arrow_back,
         color: Colors.white,
       ),
       ),
-      title: Text('Gunung Gede',
+      title: const Text('Gunung Gede',
       style: TextStyle(
         color: Colors.white,
         fontFamily: 'Roboto',
         fontSize: 20,
         ),
         ),
-      backgroundColor: Color.fromARGB(255, 0, 28, 20),
+      backgroundColor: const Color.fromARGB(255, 0, 28, 20),
       ),
       body:Stack(
         children: [
@@ -70,8 +70,8 @@ class _informasi_1State extends State<informasi_1> {
       
                             width: MediaQuery.of(context).size.width*1.0,
                             height: 50,
-                            margin: EdgeInsets.only(bottom: 240),
-                            padding: EdgeInsets.only(left: 340),
+                            margin: const EdgeInsets.only(bottom: 240),
+                            padding: const EdgeInsets.only(left: 340),
                             child: IconButton(
                                     onPressed: () {},
                                     icon: const Icon(
@@ -82,7 +82,7 @@ class _informasi_1State extends State<informasi_1> {
                                     ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(bottom: 70),
+                            margin: const EdgeInsets.only(bottom: 70),
                             child: Padding(
                               padding: const EdgeInsets.all(10),
                               child: Column(
@@ -116,7 +116,7 @@ class _informasi_1State extends State<informasi_1> {
                                                   color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.5), // Warna bayangan
                                                   spreadRadius: 2, // Jarak penyebaran bayangan
                                                   blurRadius: 5, // Tingkat blur bayangan
-                                                  offset: Offset(0, 3), // Posisi bayangan (x, y)
+                                                  offset: const Offset(0, 3), // Posisi bayangan (x, y)
                                                   ),
                                                   ],
                                             borderRadius:
@@ -129,7 +129,7 @@ class _informasi_1State extends State<informasi_1> {
                                   const SizedBox(
                                     height: 15,
                                   ),
-                                  Row(
+                                  const Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     crossAxisAlignment:
@@ -164,8 +164,8 @@ class _informasi_1State extends State<informasi_1> {
              Container(
                width: MediaQuery.of(context).size.width*1.0,
                height: 480,
-               margin: EdgeInsets.only(bottom:0),
-                 decoration: BoxDecoration(
+               margin: const EdgeInsets.only(bottom:0),
+                 decoration: const BoxDecoration(
                     color: Color.fromARGB(255, 0, 28, 20),
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(40),topRight: Radius.circular(40)),
                   ),
@@ -173,18 +173,18 @@ class _informasi_1State extends State<informasi_1> {
                     children: [
                       //list1
                       Container(
-                        margin: EdgeInsets.only(top: 35),
+                        margin: const EdgeInsets.only(top: 35),
                         height: 58,
                         width: 337,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 0, 28, 20),
+                          color: const Color.fromARGB(255, 0, 28, 20),
                           borderRadius: BorderRadius.circular(40),
                           border: Border.all(
                             color: Colors.white,
                             width: 3.0,
                           ),
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                           'Pesan Tiket',
                           style: TextStyle(
@@ -199,18 +199,18 @@ class _informasi_1State extends State<informasi_1> {
                       //list1
                       //list2
                       Container(
-                        margin: EdgeInsets.only(top: 25),
+                        margin: const EdgeInsets.only(top: 25),
                         height: 58,
                         width: 337,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 0, 28, 20),
+                          color: const Color.fromARGB(255, 0, 28, 20),
                           borderRadius: BorderRadius.circular(40),
                           border: Border.all(
                             color: Colors.white,
                             width: 3.0,
                           ),
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                           'Lokasi Wisata',
                           style: TextStyle(
@@ -225,18 +225,18 @@ class _informasi_1State extends State<informasi_1> {
                       //list2
                       //list3
                       Container(
-                        margin: EdgeInsets.only(top: 25),
+                        margin: const EdgeInsets.only(top: 25),
                         height: 58,
                         width: 337,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 0, 28, 20),
+                          color: const Color.fromARGB(255, 0, 28, 20),
                           borderRadius: BorderRadius.circular(40),
                           border: Border.all(
                             color: Colors.white,
                             width: 3.0,
                           ),
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                           'Instagram',
                           style: TextStyle(
@@ -251,18 +251,18 @@ class _informasi_1State extends State<informasi_1> {
                       //list3
                       //list4
                       Container(
-                        margin: EdgeInsets.only(top: 25),
+                        margin: const EdgeInsets.only(top: 25),
                         height: 58,
                         width: 337,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 0, 28, 20),
+                          color: const Color.fromARGB(255, 0, 28, 20),
                           borderRadius: BorderRadius.circular(40),
                           border: Border.all(
                             color: Colors.white,
                             width: 3.0,
                           ),
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                           'Facebook',
                           style: TextStyle(
@@ -277,18 +277,18 @@ class _informasi_1State extends State<informasi_1> {
                       //list4
                       //list5
                       Container(
-                        margin: EdgeInsets.only(top: 25),
+                        margin: const EdgeInsets.only(top: 25),
                         height: 58,
                         width: 337,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 0, 28, 20),
+                          color: const Color.fromARGB(255, 0, 28, 20),
                           borderRadius: BorderRadius.circular(40),
                           border: Border.all(
                             color: Colors.white,
                             width: 3.0,
                           ),
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                           'WhatsApp',
                           style: TextStyle(
