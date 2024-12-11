@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/models/destinasi_wisata.dart';
+import 'package:myapp/screen/detail_destination.dart';
 import 'package:myapp/screen/favorit.dart';
 import 'package:myapp/screen/halaman_akun.dart';
 import 'package:myapp/screen/home.dart';
 import 'package:myapp/widget/sidebar.dart';
-
 
 class ExploreCianjur extends StatelessWidget {
   const ExploreCianjur({super.key});
@@ -12,7 +13,22 @@ class ExploreCianjur extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const MainPage(),
+      home: DetailDestinasi(
+        destination: TravelDestination(
+            des: "des",
+            id: 2,
+            name: "pakuy",
+            category: "category",
+            image: [
+              'image/sate-1.jpg',
+              'image/sate-2.jpg',
+              'image/sate-3.jpg',
+            ],
+            location: "bandung",
+            review: 2,
+            price: 500,
+            rate: 2),
+      ),
     );
   }
 }
