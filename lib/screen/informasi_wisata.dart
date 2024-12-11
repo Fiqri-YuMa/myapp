@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // import 'package:myapp/screen/detail_destination.dart';
 
 class informasi_1 extends StatefulWidget {
-  final List<String> destination;
+  final List<String>? destination;
   const informasi_1({super.key, required this.destination});
 
   @override
@@ -51,9 +51,9 @@ class _informasi_1State extends State<informasi_1> {
                           });
                         },
                         children: List.generate(
-                          widget.destination.length,
+                          widget.destination!.length,
                           (index) => Image.asset(
-                            widget.destination[index],
+                            widget.destination![index],
                             fit: BoxFit.cover,
                             // (index) => Image.network(
                             //   fit: BoxFit.cover,
@@ -90,7 +90,7 @@ class _informasi_1State extends State<informasi_1> {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: List.generate(
-                                      widget.destination.length,
+                                      widget.destination!.length,
                                       (index) => GestureDetector(
                                         onTap: () {
                                           if (pageController.hasClients) {
