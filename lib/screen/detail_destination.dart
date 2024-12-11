@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/models/destinasi_wisata.dart';
 import 'package:myapp/models/hotel_wisata.dart';
 import 'package:myapp/models/kuliner_wisata.dart';
+import 'package:myapp/screen/informasi_wisata.dart';
 
 class DetailDestinasi extends StatefulWidget {
   final TravelDestination destination;
@@ -384,7 +385,17 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
                                 width: 3.0,
                               ),
                             ),
-                            child: const Center(
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => informasi_1(
+                                      destination: widget.destination.image,
+                                    ),
+                                  ),
+                                );
+                              },
                               child: Text(
                                 'Informasi Booking/Pesan Tiket',
                                 style: TextStyle(
@@ -408,8 +419,6 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
       ),
     );
   }
-
-  
 
   Widget buildAppBar() {
     return Container(
@@ -479,7 +488,6 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
     );
   }
 }
-
 
 class DetailDestinasi1 extends StatefulWidget {
   final hotelDestination destination;
@@ -862,7 +870,17 @@ class _DetailDestinasi1State extends State<DetailDestinasi1> {
                                 width: 3.0,
                               ),
                             ),
-                            child: const Center(
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => informasi_1(
+                                      destination: widget.destination.image,
+                                    ),
+                                  ),
+                                );
+                              },
                               child: Text(
                                 'Informasi Booking/Pesan Tiket',
                                 style: TextStyle(
@@ -886,8 +904,6 @@ class _DetailDestinasi1State extends State<DetailDestinasi1> {
       ),
     );
   }
-
-  
 
   Widget buildAppBar() {
     return Container(
@@ -1339,7 +1355,17 @@ class _DetailDestinasi2State extends State<DetailDestinasi2> {
                                 width: 3.0,
                               ),
                             ),
-                            child: const Center(
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => informasi_1(
+                                      destination: widget.destination.image,
+                                    ),
+                                  ),
+                                );
+                              },
                               child: Text(
                                 'Informasi Booking/Pesan Tiket',
                                 style: TextStyle(
@@ -1363,8 +1389,6 @@ class _DetailDestinasi2State extends State<DetailDestinasi2> {
       ),
     );
   }
-
-  
 
   Widget buildAppBar() {
     return Container(
@@ -1434,5 +1458,3 @@ class _DetailDestinasi2State extends State<DetailDestinasi2> {
     );
   }
 }
-
-
