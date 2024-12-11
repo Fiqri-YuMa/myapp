@@ -1,8 +1,6 @@
 import 'dart:math';
 
 Random random = Random();
-const description =
-    'Tempat-tempat wisata menawarkan beragam pengalaman, masing-masing dengan pesona dan daya tarik yang unik. Dari lanskap alam yang memukau hingga landmark bersejarah, selalu ada sesuatu untuk setiap wisatawan. Wisata PesisirDestinasi seperti pantai tropis mengundang relaksasi dengan air yang jernih, sementara daerah pegunungan menawarkan jalur pendakian yang penuh petualangan dan pemandangan yang menakjubkan.';
 
 class hotelDestination {
   final int id, price, review;
@@ -37,7 +35,7 @@ List<hotelDestination> listHotelDestination = [
       location: 'Kecamatan Cipanas, Kabupaten Cianjur',
       review: random.nextInt(250) + 20,
       price: 150,
-      description: description,
+      description: "description",
       rate: 4.8),
 
   hotelDestination(
@@ -53,7 +51,7 @@ List<hotelDestination> listHotelDestination = [
       location: 'Kecamatan Cipanas, Kabupaten Cianjur',
       review: random.nextInt(250) + 20,
       price: 150,
-      description: description,
+      description: "description",
       rate: 4.8),
 
   hotelDestination(
@@ -68,6 +66,6 @@ List<hotelDestination> listHotelDestination = [
       location: 'Kecamatan Cipanas, Kabupaten Cianjur',
       review: random.nextInt(250) + 20,
       price: 150,
-      description: description,
+      description: "description",
       rate: 4.8),
 ];
