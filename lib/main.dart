@@ -31,7 +31,7 @@ class _MainPageState extends State<MainPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _currentIndex = 0;
   int halaman = 0;
-  String posisi = "Cipanas";
+  String posisi = 'Cipanas';
 
   List<Widget> _getChildren() {
     return [
@@ -49,7 +49,8 @@ class _MainPageState extends State<MainPage> {
 
   void updatePosisi(String newPosisi) {
     setState(() {
-      posisi = newPosisi; // Update posisi berdasarkan pilihan dari Sidebar
+      posisi = newPosisi;
+      onTappedBar(0); // Update posisi berdasarkan pilihan dari Sidebar
     });
   }
 
@@ -78,7 +79,9 @@ class _MainPageState extends State<MainPage> {
               child: Container(
                 color: const Color.fromARGB(255, 0, 16, 12),
                 padding: const EdgeInsets.only(right: 20),
-                child: Row(
+                child: GestureDetector(
+                  onTap: (){_scaffoldKey.currentState?.openEndDrawer();},
+                  child: Row(
                   children: [
                     Container(
                       alignment: Alignment.centerLeft,
@@ -93,12 +96,13 @@ class _MainPageState extends State<MainPage> {
                     Text(posisi, style: const TextStyle(color: Colors.white)),
                   ],
                 ),
+                )
               ),
             ),
           ),
           IconButton(
             onPressed: () {
-              _scaffoldKey.currentState?.openEndDrawer();
+              // _scaffoldKey.currentState?.openEndDrawer();
             },
             icon: const Icon(
               Icons.search,
@@ -111,7 +115,9 @@ class _MainPageState extends State<MainPage> {
     } else if (_currentIndex == 2) {
       return AppBar(
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              onTappedBar(0);
+            },
             icon: const Icon(
               Icons.arrow_back,
               color: Colors.white,
@@ -124,7 +130,7 @@ class _MainPageState extends State<MainPage> {
         actions: <Widget>[
           IconButton(
             onPressed: () {
-              _scaffoldKey.currentState?.openEndDrawer();
+              // _scaffoldKey.currentState?.openEndDrawer();
             },
             icon: const Icon(
               Icons.search,
@@ -140,7 +146,7 @@ class _MainPageState extends State<MainPage> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            // Tambahkan fungsi untuk kembali di sini
+            onTappedBar(0);
           },
         ),
         title: const Text('Favorit', style: TextStyle(color: Colors.white)),

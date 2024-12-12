@@ -66,4 +66,32 @@ List<TravelDestination> listDestination = [
       price: 250,
       des : 'Sevillage merupakan Taman di lereng bukit dengan jalan kayu, yang menawarkan bangunan untuk berfoto, restoran, dan tenda glamping.',
       rate: 4.7),
+      TravelDestination(
+      id: 4,
+      name: "Sevillage Cikalongulon",
+      category: 'Cikalongulon',
+      image: [
+        'image/sevillage-3.jpg',
+        'image/sevillage-2.jpg',
+        'image/sevillage-1.jpg',
+      ],
+      location: 'Kecamatan Cipanas, Kabupaten Cianjur',
+      review: random.nextInt(250) + 20,
+      price: 250,
+      des : 'Sevillage merupakan Taman di lereng bukit dengan jalan kayu, yang menawarkan bangunan untuk berfoto, restoran, dan tenda glamping.',
+      rate: 4.7),
+      TravelDestination(
+      id: 5,
+      name: "Cikalong ",
+      category: 'Cikalongulon',
+      image: [
+        'image/gede-3.jpg',
+        'image/sevillage-2.jpg',
+        'image/sevillage-3.jpg',
+      ],
+      location: 'Kecamatan Cipanas, Kabupaten Cianjur',
+      review: random.nextInt(250) + 20,
+      price: 250,
+      des : 'Sevillage merupakan Taman di lereng bukit dengan jalan kayu, yang menawarkan bangunan untuk berfoto, restoran, dan tenda glamping.',
+      rate: 4.7),
 ];

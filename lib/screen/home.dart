@@ -262,7 +262,17 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                         color: Colors.white,
                       ),
                     ),
-                    const Text(
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HalamanWisata(
+                                                jenis: 1,
+                                              )));
+                      },
+                      child: const Text(
                       'Lihat Semua >',
                       style: TextStyle(
                         fontSize: 12,
@@ -271,6 +281,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                         color: Colors.white,
                       ),
                     ),
+                      )
                   ],
                 ),
               ),
@@ -320,7 +331,17 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                         color: Colors.white,
                       ),
                     ),
-                    const Text(
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HalamanWisata(
+                                                jenis: 2,
+                                              )));
+                      },
+                      child: const Text(
                       'Lihat Semua >',
                       style: TextStyle(
                         fontSize: 12,
@@ -328,7 +349,8 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),
-                    )
+                    ),
+                      )
                   ],
                 ),
               ),
@@ -379,7 +401,17 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                         color: Colors.white,
                       ),
                     ),
-                    const Text(
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HalamanWisata(
+                                                jenis: 3,
+                                              )));
+                      },
+                      child: const Text(
                       'Lihat Semua >',
                       style: TextStyle(
                         fontSize: 12,
@@ -388,6 +420,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                         color: Colors.white,
                       ),
                     ),
+                      )
                   ],
                 ),
               ),
