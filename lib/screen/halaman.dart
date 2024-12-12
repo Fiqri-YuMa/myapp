@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/main.dart';
 import 'package:myapp/models/destinasi_wisata.dart';
 import 'package:myapp/models/event_wisata.dart';
 import 'package:myapp/models/hotel_wisata.dart';
 import 'package:myapp/models/kuliner_wisata.dart';
 import 'package:myapp/screen/detail_destination.dart';
+import 'package:myapp/widget/event.dart';
 import 'package:myapp/widget/hotel.dart';
 import 'package:myapp/widget/kuliner.dart';
 import 'package:myapp/widget/wisata.dart';
@@ -16,6 +18,21 @@ class HalamanWisata extends StatefulWidget {
 }
 
 class _HalamanState extends State<HalamanWisata> {
+
+int _currentIndex = 0;
+
+  void onTappedBar(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const MainPage()));
+
+  }
+
   List<TravelDestination> wisata = listDestination;
   List<hotelDestination> hotel = listHotelDestination;
   List<KulinerDestination> kuliner = listKulinerDestination;
@@ -33,9 +50,9 @@ class _HalamanState extends State<HalamanWisata> {
     } else if (widget.jenis == 2) {
       pilihan = hotel;
     } else if (widget.jenis == 3) {
-      pilihan = event;
-    } else {
       pilihan = kuliner;
+    } else {
+      pilihan = event;
     }
     return Scaffold(
       appBar: AppBar(
@@ -90,7 +107,13 @@ class _HalamanState extends State<HalamanWisata> {
                           color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
                               onPressed: () {
-                                const HalamanWisata(jenis: 1);
+                                Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HalamanWisata(
+                                                jenis: 1,
+                                              )));
                               },
                               icon: const Image(
                                 image: AssetImage(
@@ -123,7 +146,13 @@ class _HalamanState extends State<HalamanWisata> {
                           color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
                               onPressed: () {
-                                const HalamanWisata(jenis: 2);
+                                Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HalamanWisata(
+                                                jenis: 2,
+                                              )));
                               },
                               icon: const Image(
                                 image: AssetImage(
@@ -156,7 +185,13 @@ class _HalamanState extends State<HalamanWisata> {
                           color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
                               onPressed: () {
-                                const HalamanWisata(jenis: 3);
+                                Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HalamanWisata(
+                                                jenis: 3,
+                                              )));
                               },
                               icon: const Image(
                                 image: AssetImage(
@@ -189,7 +224,13 @@ class _HalamanState extends State<HalamanWisata> {
                           color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
                             onPressed: () {
-                              const HalamanWisata(jenis: 4);
+                              Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HalamanWisata(
+                                                jenis: 4,
+                                              )));
                             },
                             icon: const Image(
                               image: AssetImage(
@@ -248,6 +289,22 @@ class _HalamanState extends State<HalamanWisata> {
                                     DetailDestinasi(destination: pilihan[index]),
                               ),
                             );
+                          }else if (widget.jenis == 2) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) =>
+                                    DetailDestinasi1(destination: pilihan[index]),
+                              ),
+                            );
+                          }else if (widget.jenis == 3) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) =>
+                                    DetailDestinasi2(destination: pilihan[index]),
+                              ),
+                            );
                           }
                         },
                         child: Builder(builder: (context) {
@@ -258,7 +315,7 @@ class _HalamanState extends State<HalamanWisata> {
                           }else if(widget.jenis==3){
                             return halamanDestination3(destination: pilihan[index]);
                           }else{
-                            return PopularKulinerDestination(destination: pilihan[index]);
+                            return halamanDestination4(destination: pilihan[index]);
                           }
                         },),
                         // child: halamanDestination(destination: pilihan[index]),
@@ -292,12 +349,12 @@ class _HalamanState extends State<HalamanWisata> {
                   label: 'Akun',
                 ),
               ],
-              // currentIndex: _selectedNavbar,
+              currentIndex: _currentIndex,
               backgroundColor: const Color.fromARGB(255, 0, 28, 20),
               selectedItemColor: Colors.grey,
               unselectedItemColor: Colors.white,
               showUnselectedLabels: true,
-              // onTap: _changeSelectedNavBar,
+              onTap: onTappedBar,
             ),
           ),
         ),

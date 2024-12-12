@@ -18,7 +18,7 @@ class Sidebar extends StatelessWidget {
           (index) => ListTile(
             iconColor: Colors.white,
             leading: const Icon(Icons.location_on),
-            title: Text(lok[index].nama,style: TextStyle(
+            title: Text(lok[index].nama,style: const TextStyle(
               color: Colors.white,
               fontFamily: 'Roboto',
               fontSize: 15,

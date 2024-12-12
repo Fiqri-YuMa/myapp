@@ -14,6 +14,5 @@ class lokasi {
 List<lokasi> listlokasi = [
   lokasi(nama: "Cipanas"),
   lokasi(nama: "Cianjur"),
-  lokasi(nama: "Bandung"),
-  lokasi(nama: "Jakarta"),
+  lokasi(nama: "Cikalongulon"),
 ];

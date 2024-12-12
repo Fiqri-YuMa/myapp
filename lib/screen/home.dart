@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/main.dart';
 import 'package:myapp/models/destinasi_wisata.dart';
 import 'package:myapp/models/hotel_wisata.dart';
 import 'package:myapp/models/kuliner_wisata.dart';
 import 'package:myapp/screen/detail_destination.dart';
+import 'package:myapp/screen/halaman.dart';
 // import 'package:myapp/screen/halaman.dart';
 import 'package:myapp/widget/hotel.dart';
 import 'package:myapp/widget/kuliner.dart';
 import 'package:myapp/widget/wisata.dart';
 
-class BelajarNavBar extends StatefulWidget {
+class BelajarNavBar extends StatefulWidget implements MainPage {
   final String pilihan;
   const BelajarNavBar({super.key, required this.pilihan});
 
@@ -17,7 +19,6 @@ class BelajarNavBar extends StatefulWidget {
 }
 
 class _BelajarNavBarState extends State<BelajarNavBar> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   late List<TravelDestination> wisata = listDestination
       .where((element) => element.category == widget.pilihan)
       .toList();
@@ -90,7 +91,15 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                             padding: const EdgeInsets.all(2),
                             color: const Color.fromARGB(255, 30, 30, 30),
                             child: IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HalamanWisata(
+                                                jenis: 1,
+                                              )));
+                                },
                                 icon: const Image(
                                   image: AssetImage(
                                     'image/Vector.png',
@@ -122,7 +131,15 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                             padding: const EdgeInsets.all(2),
                             color: const Color.fromARGB(255, 30, 30, 30),
                             child: IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HalamanWisata(
+                                                jenis: 2,
+                                              )));
+                                },
                                 icon: const Image(
                                   image: AssetImage(
                                     'image/Vector1.png',
@@ -154,7 +171,15 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                             padding: const EdgeInsets.all(2),
                             color: const Color.fromARGB(255, 30, 30, 30),
                             child: IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HalamanWisata(
+                                                jenis: 3,
+                                              )));
+                                },
                                 icon: const Image(
                                   image: AssetImage(
                                     'image/Vector2.png',
@@ -186,7 +211,15 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                             padding: const EdgeInsets.all(2),
                             color: const Color.fromARGB(255, 30, 30, 30),
                             child: IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HalamanWisata(
+                                                jenis: 4,
+                                              )));
+                              },
                               icon: const Image(
                                 image: AssetImage(
                                   'image/Vector3.png',
@@ -229,7 +262,17 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                         color: Colors.white,
                       ),
                     ),
-                    const Text(
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HalamanWisata(
+                                                jenis: 1,
+                                              )));
+                      },
+                      child: const Text(
                       'Lihat Semua >',
                       style: TextStyle(
                         fontSize: 12,
@@ -238,6 +281,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                         color: Colors.white,
                       ),
                     ),
+                      )
                   ],
                 ),
               ),
@@ -287,7 +331,17 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                         color: Colors.white,
                       ),
                     ),
-                    const Text(
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HalamanWisata(
+                                                jenis: 2,
+                                              )));
+                      },
+                      child: const Text(
                       'Lihat Semua >',
                       style: TextStyle(
                         fontSize: 12,
@@ -295,7 +349,8 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),
-                    )
+                    ),
+                      )
                   ],
                 ),
               ),
@@ -317,7 +372,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                             context,
                             MaterialPageRoute(
                               builder: (_) =>
-                                  DetailDestinasi(destination: wisata[index]),
+                                  DetailDestinasi1(destination: hotel[index]),
                             ),
                           );
                         },
@@ -346,7 +401,17 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                         color: Colors.white,
                       ),
                     ),
-                    const Text(
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HalamanWisata(
+                                                jenis: 3,
+                                              )));
+                      },
+                      child: const Text(
                       'Lihat Semua >',
                       style: TextStyle(
                         fontSize: 12,
@@ -355,6 +420,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                         color: Colors.white,
                       ),
                     ),
+                      )
                   ],
                 ),
               ),
@@ -376,7 +442,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                             context,
                             MaterialPageRoute(
                               builder: (_) =>
-                                  DetailDestinasi(destination: wisata[index]),
+                                  DetailDestinasi2(destination: kuliner[index]),
                             ),
                           );
                         },
