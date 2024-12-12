@@ -203,7 +203,7 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
+                      SizedBox(
                         height: 45,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -235,7 +235,8 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
                               color: Colors.red,
                               size: 28,
                             ),
-                            SizedBox(width: 5), // Spasi antara ikon dan teks
+                            const SizedBox(
+                                width: 5), // Spasi antara ikon dan teks
                             Expanded(
                               child: Text(
                                 widget.destination.location,
@@ -312,12 +313,12 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Row(
+                      const Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               Text(
                                 "Waktu",
                                 style: TextStyle(
@@ -339,10 +340,10 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
                               ),
                             ],
                           ),
-                          const SizedBox(width: 60),
+                          SizedBox(width: 60),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               Text(
                                 ": 08:00 - 20:00",
                                 style: TextStyle(
@@ -372,7 +373,7 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
                             height: 50,
                             width: 224,
                             decoration: BoxDecoration(
-                              gradient: LinearGradient(
+                              gradient: const LinearGradient(
                                   begin: Alignment.topCenter,
                                   end: Alignment.bottomCenter,
                                   colors: [
@@ -385,24 +386,26 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
                                 width: 3.0,
                               ),
                             ),
-                            child: GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) => informasi_1(
-                                      destination: widget.destination.image,
+                            child: Center(
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) => informasi_1(
+                                        destination: widget.destination.image,
+                                      ),
                                     ),
+                                  );
+                                },
+                                child: const Text(
+                                  'Informasi Booking/Pesan Tiket',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'roboto',
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                );
-                              },
-                              child: Text(
-                                'Informasi Booking/Pesan Tiket',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'roboto',
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),
@@ -688,7 +691,7 @@ class _DetailDestinasi1State extends State<DetailDestinasi1> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
+                      SizedBox(
                         height: 45,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -720,7 +723,8 @@ class _DetailDestinasi1State extends State<DetailDestinasi1> {
                               color: Colors.red,
                               size: 28,
                             ),
-                            SizedBox(width: 5), // Spasi antara ikon dan teks
+                            const SizedBox(
+                                width: 5), // Spasi antara ikon dan teks
                             Expanded(
                               child: Text(
                                 widget.destination.location,
@@ -797,12 +801,12 @@ class _DetailDestinasi1State extends State<DetailDestinasi1> {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Row(
+                      const Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               Text(
                                 "Waktu",
                                 style: TextStyle(
@@ -824,10 +828,10 @@ class _DetailDestinasi1State extends State<DetailDestinasi1> {
                               ),
                             ],
                           ),
-                          const SizedBox(width: 60),
+                          SizedBox(width: 60),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               Text(
                                 ": 08:00 - 20:00",
                                 style: TextStyle(
@@ -857,7 +861,7 @@ class _DetailDestinasi1State extends State<DetailDestinasi1> {
                             height: 50,
                             width: 224,
                             decoration: BoxDecoration(
-                              gradient: LinearGradient(
+                              gradient: const LinearGradient(
                                   begin: Alignment.topCenter,
                                   end: Alignment.bottomCenter,
                                   colors: [
@@ -870,24 +874,26 @@ class _DetailDestinasi1State extends State<DetailDestinasi1> {
                                 width: 3.0,
                               ),
                             ),
-                            child: GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) => informasi_1(
-                                      destination: widget.destination.image,
+                            child: Center(
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) => informasi_1(
+                                        destination: widget.destination.image,
+                                      ),
                                     ),
+                                  );
+                                },
+                                child: const Text(
+                                  'Informasi Booking/Pesan Tiket',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'roboto',
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                );
-                              },
-                              child: Text(
-                                'Informasi Booking/Pesan Tiket',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'roboto',
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),
@@ -1173,7 +1179,7 @@ class _DetailDestinasi2State extends State<DetailDestinasi2> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
+                      SizedBox(
                         height: 45,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1205,7 +1211,8 @@ class _DetailDestinasi2State extends State<DetailDestinasi2> {
                               color: Colors.red,
                               size: 28,
                             ),
-                            SizedBox(width: 5), // Spasi antara ikon dan teks
+                            const SizedBox(
+                                width: 5), // Spasi antara ikon dan teks
                             Expanded(
                               child: Text(
                                 widget.destination.location,
@@ -1282,12 +1289,12 @@ class _DetailDestinasi2State extends State<DetailDestinasi2> {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Row(
+                      const Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               Text(
                                 "Waktu",
                                 style: TextStyle(
@@ -1309,10 +1316,10 @@ class _DetailDestinasi2State extends State<DetailDestinasi2> {
                               ),
                             ],
                           ),
-                          const SizedBox(width: 60),
+                          SizedBox(width: 60),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               Text(
                                 ": 08:00 - 20:00",
                                 style: TextStyle(
@@ -1342,7 +1349,7 @@ class _DetailDestinasi2State extends State<DetailDestinasi2> {
                             height: 50,
                             width: 224,
                             decoration: BoxDecoration(
-                              gradient: LinearGradient(
+                              gradient: const LinearGradient(
                                   begin: Alignment.topCenter,
                                   end: Alignment.bottomCenter,
                                   colors: [
@@ -1355,24 +1362,26 @@ class _DetailDestinasi2State extends State<DetailDestinasi2> {
                                 width: 3.0,
                               ),
                             ),
-                            child: GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) => informasi_1(
-                                      destination: widget.destination.image,
+                            child: Center(
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) => informasi_1(
+                                        destination: widget.destination.image,
+                                      ),
                                     ),
+                                  );
+                                },
+                                child: const Text(
+                                  'Informasi Booking/Pesan Tiket',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'roboto',
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                );
-                              },
-                              child: Text(
-                                'Informasi Booking/Pesan Tiket',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'roboto',
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),

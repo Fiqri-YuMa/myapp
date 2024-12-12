@@ -90,7 +90,9 @@ class _HalamanState extends State<HalamanWisata> {
                           color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
                               onPressed: () {
-                                const HalamanWisata(jenis: 1);
+                                setState(() {
+                                  const HalamanWisata(jenis: 1);
+                                });
                               },
                               icon: const Image(
                                 image: AssetImage(
@@ -123,7 +125,9 @@ class _HalamanState extends State<HalamanWisata> {
                           color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
                               onPressed: () {
-                                const HalamanWisata(jenis: 2);
+                                setState(() {
+                                  const HalamanWisata(jenis: 2);
+                                });
                               },
                               icon: const Image(
                                 image: AssetImage(
@@ -156,7 +160,9 @@ class _HalamanState extends State<HalamanWisata> {
                           color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
                               onPressed: () {
-                                const HalamanWisata(jenis: 3);
+                                setState(() {
+                                  const HalamanWisata(jenis: 3);
+                                });
                               },
                               icon: const Image(
                                 image: AssetImage(
@@ -189,7 +195,9 @@ class _HalamanState extends State<HalamanWisata> {
                           color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
                             onPressed: () {
-                              const HalamanWisata(jenis: 4);
+                              setState(() {
+                                  const HalamanWisata(jenis: 4);
+                                });
                             },
                             icon: const Image(
                               image: AssetImage(

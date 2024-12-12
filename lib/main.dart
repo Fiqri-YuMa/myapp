@@ -9,7 +9,7 @@ class ExploreCianjur extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MainPage(),
     );
@@ -30,11 +30,12 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _currentIndex = 0;
+  int halaman = 0;
   String posisi = "Cipanas";
 
   List<Widget> _getChildren() {
     return [
-      BelajarNavBar(pilihan: posisi),
+      BelajarNavBar(pilihan: posisi,halaman: halaman,),
       const FavoritePage(),
       const isi_akun(),
     ];
