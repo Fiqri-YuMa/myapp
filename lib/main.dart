@@ -35,7 +35,7 @@ class _MainPageState extends State<MainPage> {
 
   List<Widget> _getChildren() {
     return [
-      BelajarNavBar(pilihan: posisi,halaman: halaman,),
+      BelajarNavBar(pilihan: posisi),
       const FavoritePage(),
       const isi_akun(),
     ];
