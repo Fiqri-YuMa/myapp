@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:myapp/screen/favorit.dart';
 import 'package:myapp/screen/halaman_akun.dart';
 import 'package:myapp/screen/home.dart';
+import 'package:myapp/screen/login.dart';
+import 'package:myapp/screen/lupa_pass.dart';
+import 'package:myapp/screen/register.dart';
 import 'package:myapp/widget/sidebar.dart';
 
 class ExploreCianjur extends StatelessWidget {
