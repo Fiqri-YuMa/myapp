@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/main.dart';
 import 'package:myapp/models/destinasi_wisata.dart';
 import 'package:myapp/models/hotel_wisata.dart';
 import 'package:myapp/models/kuliner_wisata.dart';
@@ -10,7 +9,7 @@ import 'package:myapp/widget/hotel.dart';
 import 'package:myapp/widget/kuliner.dart';
 import 'package:myapp/widget/wisata.dart';
 
-class BelajarNavBar extends StatefulWidget implements MainPage {
+class BelajarNavBar extends StatefulWidget{
   final String pilihan;
   const BelajarNavBar({super.key, required this.pilihan});
 

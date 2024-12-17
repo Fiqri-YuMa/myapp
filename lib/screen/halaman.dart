@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/benar/satu.dart';
 import 'package:myapp/main.dart';
 import 'package:myapp/models/destinasi_wisata.dart';
 import 'package:myapp/models/event_wisata.dart';
@@ -18,19 +19,18 @@ class HalamanWisata extends StatefulWidget {
 }
 
 class _HalamanState extends State<HalamanWisata> {
-
-int _currentIndex = 0;
+  int _currentIndex = 0;
 
   void onTappedBar(int index) {
     setState(() {
       _currentIndex = index;
     });
     Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const MainPage()));
-
+        context,
+        MaterialPageRoute(
+            builder: (context) => const Home(
+                  pilihan: "hh",
+                )));
   }
 
   List<TravelDestination> wisata = listDestination;
@@ -101,19 +101,20 @@ int _currentIndex = 0;
                       height: 70,
                       margin: const EdgeInsets.only(bottom: 5),
                       child: ClipRRect(
-                        borderRadius: const BorderRadius.all(Radius.circular(50)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(50)),
                         child: Container(
                           padding: const EdgeInsets.all(2),
                           color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
                               onPressed: () {
                                 Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const HalamanWisata(
-                                                jenis: 1,
-                                              )));
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const HalamanWisata(
+                                              jenis: 1,
+                                            )));
                               },
                               icon: const Image(
                                 image: AssetImage(
@@ -140,19 +141,20 @@ int _currentIndex = 0;
                       height: 70,
                       margin: const EdgeInsets.only(bottom: 5),
                       child: ClipRRect(
-                        borderRadius: const BorderRadius.all(Radius.circular(50)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(50)),
                         child: Container(
                           padding: const EdgeInsets.all(2),
                           color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
                               onPressed: () {
                                 Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const HalamanWisata(
-                                                jenis: 2,
-                                              )));
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const HalamanWisata(
+                                              jenis: 2,
+                                            )));
                               },
                               icon: const Image(
                                 image: AssetImage(
@@ -179,19 +181,20 @@ int _currentIndex = 0;
                       height: 70,
                       margin: const EdgeInsets.only(bottom: 5),
                       child: ClipRRect(
-                        borderRadius: const BorderRadius.all(Radius.circular(50)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(50)),
                         child: Container(
                           padding: const EdgeInsets.all(2),
                           color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
                               onPressed: () {
                                 Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const HalamanWisata(
-                                                jenis: 3,
-                                              )));
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const HalamanWisata(
+                                              jenis: 3,
+                                            )));
                               },
                               icon: const Image(
                                 image: AssetImage(
@@ -218,19 +221,19 @@ int _currentIndex = 0;
                       height: 70,
                       margin: const EdgeInsets.only(bottom: 5),
                       child: ClipRRect(
-                        borderRadius: const BorderRadius.all(Radius.circular(50)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(50)),
                         child: Container(
                           padding: const EdgeInsets.all(2),
                           color: const Color.fromARGB(255, 30, 30, 30),
                           child: IconButton(
                             onPressed: () {
                               Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const HalamanWisata(
-                                                jenis: 4,
-                                              )));
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const HalamanWisata(
+                                            jenis: 4,
+                                          )));
                             },
                             icon: const Image(
                               image: AssetImage(
@@ -278,46 +281,53 @@ int _currentIndex = 0;
                   children: List.generate(
                     wisata.length,
                     (index) => Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
+                      padding:
+                          const EdgeInsets.only(top: 20, left: 10, right: 10),
                       child: GestureDetector(
                         onTap: () {
                           if (widget.jenis == 1) {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (_) =>
-                                    DetailDestinasi(destination: pilihan[index]),
+                                builder: (_) => DetailDestinasi(
+                                    destination: pilihan[index]),
                               ),
                             );
-                          }else if (widget.jenis == 2) {
+                          } else if (widget.jenis == 2) {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (_) =>
-                                    DetailDestinasi1(destination: pilihan[index]),
+                                builder: (_) => DetailDestinasi1(
+                                    destination: pilihan[index]),
                               ),
                             );
-                          }else if (widget.jenis == 3) {
+                          } else if (widget.jenis == 3) {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (_) =>
-                                    DetailDestinasi2(destination: pilihan[index]),
+                                builder: (_) => DetailDestinasi2(
+                                    destination: pilihan[index]),
                               ),
                             );
                           }
                         },
-                        child: Builder(builder: (context) {
-                          if(widget.jenis==1){
-                            return halamanDestination(destination: pilihan[index]);
-                          }else if(widget.jenis==2){
-                            return halamanDestination2(destination: pilihan[index]);
-                          }else if(widget.jenis==3){
-                            return halamanDestination3(destination: pilihan[index]);
-                          }else{
-                            return halamanDestination4(destination: pilihan[index]);
-                          }
-                        },),
+                        child: Builder(
+                          builder: (context) {
+                            if (widget.jenis == 1) {
+                              return halamanDestination(
+                                  destination: pilihan[index]);
+                            } else if (widget.jenis == 2) {
+                              return halamanDestination2(
+                                  destination: pilihan[index]);
+                            } else if (widget.jenis == 3) {
+                              return halamanDestination3(
+                                  destination: pilihan[index]);
+                            } else {
+                              return halamanDestination4(
+                                  destination: pilihan[index]);
+                            }
+                          },
+                        ),
                         // child: halamanDestination(destination: pilihan[index]),
                       ),
                     ),
@@ -330,7 +340,8 @@ int _currentIndex = 0;
       ),
       bottomNavigationBar: Container(
         color: const Color.fromARGB(255, 0, 57, 41),
-        padding: const EdgeInsets.only(bottom: 20, left: 10, right: 10, top: 15),
+        padding:
+            const EdgeInsets.only(bottom: 20, left: 10, right: 10, top: 15),
         child: ClipRRect(
           borderRadius: const BorderRadius.all(Radius.circular(20)),
           child: Container(

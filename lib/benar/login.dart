@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/benar/register.dart';
+import 'package:myapp/benar/satu.dart';
+import 'package:myapp/models/data_profile.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -97,6 +100,35 @@ class _LoginState extends State<Login> {
                     GestureDetector(
                       onTap: () {
                         // Aksi login dapat ditambahkan di sini
+                        if (_emailController.text.isEmpty ||
+                            _passwordController.text.isEmpty) {
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(const SnackBar(
+                            content:
+                                Text('Email dan Password tidak boleh kosong'),
+                            duration: Duration(seconds: 2),
+                          ));
+                        } else {
+                          if (_emailController.text == profile.isi[0] &&
+                              _passwordController.text == profile.isi[3]) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Berhasil Masuk'),
+                                duration: Duration(seconds: 2),
+                              ),
+                            );
+                            Navigator.pushReplacement(context,
+                                MaterialPageRoute(builder: (context) {
+                              return Home(pilihan: 'Cipanas');
+                            }));
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text('Email atau Password Salah'),
+                                  duration: Duration(seconds: 2)),
+                            );
+                          }
+                        }
                         print('Login button pressed');
                       },
                       child: Container(
@@ -143,6 +175,10 @@ class _LoginState extends State<Login> {
                       GestureDetector(
                         onTap: () {
                           // Aksi registrasi
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) {
+                            return Register();
+                          }));
                           print('Register clicked');
                         },
                         child: const Text(

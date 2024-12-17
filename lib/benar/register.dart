@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/benar/halamankedua.dart';
+import 'package:myapp/models/data_profile.dart';
+import 'package:myapp/benar/login.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -11,6 +14,40 @@ class _RegisterState extends State<Register> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  void daftar() {
+    if (_nameController.text.isEmpty ||
+        _emailController.text.isEmpty ||
+        _passwordController.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Tidak Boleh Ada yang Kosong'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+    } else {
+      setState(() {
+        profile.isi[0] = _emailController.text;
+        profile.isi[1] = _nameController.text;
+        profile.isi[2] = _passwordController.text;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Berhasil Daftar'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(
+            builder: (context) => Halaman(
+                  jenis: 0,
+                  kecamatan: 'Cipanas',
+                )),
+        (Route<dynamic> route) => false,
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +154,9 @@ class _RegisterState extends State<Register> {
                     const SizedBox(height: 30),
                     GestureDetector(
                       onTap: () {
+                        daftar();
                         // Aksi register dapat ditambahkan di sini
+                        daftar();
                         print('Register button pressed');
                       },
                       child: Container(
@@ -154,6 +193,8 @@ class _RegisterState extends State<Register> {
                       GestureDetector(
                         onTap: () {
                           // Aksi navigasi ke halaman login
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) => Login()));
                           print('Login clicked');
                         },
                         child: const Text(
