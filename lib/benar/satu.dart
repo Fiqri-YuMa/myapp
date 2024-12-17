@@ -187,7 +187,7 @@ class _HomeState extends State<Home> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HalamanWisata(jenis: jenis),
+                      builder: (context) => Halaman(jenis: jenis,kecamatan: widget.pilihan,),
                     ),
                   );
                 },

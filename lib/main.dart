@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/bagian_layar/splasscreen.dart';
-import 'package:myapp/benar/login.dart';
-import 'package:myapp/benar/satu.dart';
-import 'package:myapp/benar/register.dart';
 
 void main() {
   runApp(const cianjur_explore());
