@@ -95,6 +95,8 @@ flutter:
     - assets/image/alam-sunda-2.jpg
     - assets/image/alam-sunda-3.jpg
 
+    #onboarding
+    - assets/image/curug.jpg
 
 
 
