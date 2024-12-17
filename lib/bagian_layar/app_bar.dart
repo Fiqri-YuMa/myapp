@@ -9,7 +9,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   CustomAppBar({
     super.key,
     required this.kecamatan,
-    required this.currentIndex, required this.halaman2,
+    required this.currentIndex,
+    required this.halaman2,
   });
 
   @override
@@ -49,7 +50,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                               builder: (context) => Pencarian(
                                     posisi: currentIndex,
                                     kecamatan: kecamatan,
-                                    x: 0,
+                                    halaman2: 0,
                                   )),
                         );
                       },
@@ -142,11 +143,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Pencarian(
-                                    posisi: currentIndex,
-                                    kecamatan: kecamatan,
-                                    x: 0,
-                                  ),),
+                            builder: (context) => Pencarian(
+                              posisi: currentIndex,
+                              kecamatan: kecamatan,
+                              halaman2: halaman2,
+                            ),
+                          ),
                         );
                       },
                       child: Row(

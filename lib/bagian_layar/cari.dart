@@ -7,12 +7,12 @@ import 'package:myapp/models/lokasi.dart';
 class Pencarian extends StatefulWidget {
   final String kecamatan;
   final int posisi;
-  final int x;
+  final int halaman2;
   const Pencarian(
       {super.key,
       required this.posisi,
       required this.kecamatan,
-      required this.x});
+      required this.halaman2});
 
   @override
   State<Pencarian> createState() => _PencarianState();
@@ -92,7 +92,7 @@ class _PencarianState extends State<Pencarian> {
                                   MaterialPageRoute(
                                     builder: (context) {
                                       return FavoriteP(
-                                        kecamatan: widget.kecamatan,
+                                        kecamatan: filteredItems[index].nama,
                                       );
                                     },
                                   ),
@@ -103,8 +103,8 @@ class _PencarianState extends State<Pencarian> {
                                   MaterialPageRoute(
                                     builder: (context) {
                                       return Halaman(
-                                        jenis: widget.x,
-                                        kecamatan: widget.kecamatan,
+                                        jenis: widget.halaman2,
+                                        kecamatan: filteredItems[index].nama,
                                       );
                                     },
                                   ),

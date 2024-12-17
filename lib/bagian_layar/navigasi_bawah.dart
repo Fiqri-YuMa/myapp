@@ -24,7 +24,7 @@ class tombol_bawah extends StatelessWidget {
             ),
             child: Icon(
               Icons.home,
-              color: index == 1 ? Colors.grey : Colors.white,
+              color: index == 0 ? Colors.grey : Colors.white,
             ),
           ),
           label: 'Home',
@@ -37,7 +37,7 @@ class tombol_bawah extends StatelessWidget {
             ),
             child: Icon(
               Icons.bookmark,
-              color: index == 0 ? Colors.grey : Colors.white,
+              color: index == 1 ? Colors.grey : Colors.white,
             ),
           ),
           label: 'Favorit',
@@ -50,7 +50,7 @@ class tombol_bawah extends StatelessWidget {
             ),
             child: Icon(
               Icons.person,
-              color: index == 1 ? Colors.grey : Colors.white,
+              color: index == 2 ? Colors.grey : Colors.white,
             ),
           ),
           label: 'Akun',
