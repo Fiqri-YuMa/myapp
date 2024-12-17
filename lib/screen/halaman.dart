@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/benar/satu.dart';
-import 'package:myapp/main.dart';
 import 'package:myapp/models/destinasi_wisata.dart';
 import 'package:myapp/models/event_wisata.dart';
 import 'package:myapp/models/hotel_wisata.dart';

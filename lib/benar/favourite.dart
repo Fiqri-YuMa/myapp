@@ -16,7 +16,11 @@ class _FavoritePState extends State<FavoriteP> {
   Widget build(BuildContext context) {
     int x = 1;
     return Scaffold(
-      appBar: CustomAppBar(kecamatan: widget.kecamatan, currentIndex: x,halaman2: 0,),
+      appBar: CustomAppBar(
+        kecamatan: widget.kecamatan,
+        currentIndex: x,
+        halaman2: 0,
+      ),
       body: Column(
         children: [
           // Container untuk pemisah area kategori
@@ -170,19 +174,24 @@ class CategoryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CircleAvatar(
-          radius: 30,
-          backgroundColor: color.withOpacity(0.2),
-          child: Icon(icon, size: 30, color: color),
-        ),
-        const SizedBox(height: 8),
-        Text(
-          label,
-          style: const TextStyle(fontSize: 14, color: Colors.white),
-        ),
-      ],
+    return Container(
+      color: const Color.fromARGB(255, 0, 57, 41),
+      child: Column(
+        children: [
+          CircleAvatar(
+            radius: 30,
+            backgroundColor: color.withOpacity(0.2),
+            child: Icon(icon, size: 30, color: Colors.grey),
+          ),
+          const SizedBox(height: 8),
+          Container(
+            child: Text(
+              label,
+              style: const TextStyle(fontSize: 14, color: Colors.white),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

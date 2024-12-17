@@ -29,7 +29,7 @@ class _RegisterState extends State<Register> {
       setState(() {
         profile.isi[0] = _emailController.text;
         profile.isi[1] = _nameController.text;
-        profile.isi[2] = _passwordController.text;
+        profile.isi[3] = _passwordController.text;
       });
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -39,11 +39,7 @@ class _RegisterState extends State<Register> {
       );
       Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(
-            builder: (context) => Halaman(
-                  jenis: 0,
-                  kecamatan: 'Cipanas',
-                )),
+        MaterialPageRoute(builder: (context) => Login()),
         (Route<dynamic> route) => false,
       );
     }
