@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/bagian_layar/splasscreen.dart';
 import 'package:myapp/benar/login.dart';
 import 'package:myapp/benar/satu.dart';
 import 'package:myapp/benar/register.dart';
@@ -14,7 +15,7 @@ class cianjur_explore extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Login(),
+      home: splash(),
       // home: Home(pilihan: "Cipanas",),
     );
   }
