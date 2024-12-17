@@ -130,7 +130,9 @@ class _FavoritePState extends State<FavoriteP> {
               ],
             ),
           ),
-          const Expanded(
+          Expanded(
+              child: Container(
+            color: const Color.fromARGB(255, 0, 28, 20),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -144,7 +146,7 @@ class _FavoritePState extends State<FavoriteP> {
                 ],
               ),
             ),
-          ),
+          )),
         ],
       ),
       bottomNavigationBar: Container(
@@ -175,12 +177,11 @@ class CategoryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(255, 0, 57, 41),
+        child: SingleChildScrollView(
       child: Column(
         children: [
           CircleAvatar(
             radius: 30,
-            backgroundColor: color.withOpacity(0.2),
             child: Icon(icon, size: 30, color: Colors.grey),
           ),
           const SizedBox(height: 8),
@@ -192,6 +193,6 @@ class CategoryButton extends StatelessWidget {
           )
         ],
       ),
-    );
+    ));
   }
 }
